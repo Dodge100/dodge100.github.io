@@ -1,4 +1,4 @@
-This website is for everyone to view. If you want to change the contents of this website or use the ocde for yourself, please read this license first.
+This website is for everyone to view. If you want to change the contents of this website or use the code for yourself, please read this license first.
 
 You are free and therefore have the right to share this website. These rights are yours as long as you follow the terms of this license.
 If you just want to look at the amount of code, feel free to! 
