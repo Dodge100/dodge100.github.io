@@ -1,25 +1,113 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>dodge1's website</title>
-    
-    <meta name="author" content="Dodge1" />
-    <meta name="description" content="dodge1's website" />
-    
-    <meta property="og:image" content="https://developer.mozilla.org/mdn-social-share.png" />
-    <meta property="og:description" content="Dodge1's website provides information about him as well as his current and upcoming projects." />
-    <meta property="og:title" content="Dodge1's Website" />
-    
-    <meta name="twitter:title" content="Dodge1's Website" />
-    
-    <link href="main.css" rel="stylesheet">
-    <script src="main.js" defer></script>
-  </head>
-  <body>
-    <div>
-      <p>about me.</p>
-    </div>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>OnyxOS</title>
+
+        <link rel="stylesheet" href="main.css" />
+        <script src="main.js" defer></script>
+    </head>
+    <body>
+        <div id="desktop">
+            <div id="dock">
+                <div class="dock-item" id="file-explorer-dock">🗂️</div>
+                <div class="dock-item" id="mail-dock">📨</div>
+                <div class="dock-item" id="ide-dock">💻</div>
+            </div>
+            <div id="window-append"></div>
+            <div id="command-pallete" class="hidden">
+                <input
+                    type="text"
+                    id="command-input"
+                    placeholder="Onyx Search"
+                    autofocus
+                />
+                <ul id="command-list"></ul>
+            </div>
+        </div>
+
+        <template id="files-template">
+            <div class="window">
+                <div class="header">
+                    <button class="close">x</button>
+                    <button class="minimize">-</button>
+                    <button class="maximize">⇱</button>
+                    <span class="title">Files</span>
+                </div>
+                <div class="window-body">
+                    <div class="files-sidebar">
+                        <div class="sidebar-folder focussed">OnyxOS</div>
+                        <div class="sidebar-folder">Retro Revival</div>
+                        <div class="sidebar-folder">Skills</div>
+                    </div>
+                    <div class="folder-content"></div>
+                </div>
+            </div>
+        </template>
+
+        <template id="mail-template">
+            <div class="window">
+                <div class="header">
+                    <button class="close">x</button>
+                    <button class="minimize">-</button>
+                    <button class="maximize">⇱</button>
+                    <span class="title">Mail</span>
+                </div>
+                <div class="window-body">
+                    <div class="mail-sidebar">
+                        <div class="mail-item">About Me</div>
+                        <div class="mail-item">Contacts</div>
+                        <div class="mail-item focussed">How to use</div>
+                    </div>
+                    <div class="mail-content">
+                        <h1>How to use</h1>
+                        <p>
+                            to use this WebOS, simply open the command pallete
+                            with control+[space] or use the dock on the side to
+                            open apps
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </template>
+
+        <template id="ide-template">
+            <div class="window">
+                <div class="header">
+                    <button class="close">x</button>
+                    <button class="minimize">-</button>
+                    <button class="maximize">⇱</button>
+                    <span class="title">IDE</span>
+                </div>
+                <div class="window-body">
+                    <div class="mail-sidebar">
+                        <div class="mail-item">About Me</div>
+                        <div class="mail-item">Contacts</div>
+                        <div class="mail-item focussed">How to use</div>
+                    </div>
+                    <div class="ide-content">
+                        <pre>
+                            /* here's a quick overview of my teck stack */
+
+                            const techStack = {
+                                frontend: {
+                                    name: "React",
+                                    name: "Vue.js"
+                                },
+                                backend: {
+                                    name: "SQLite",
+                                    name: "Next.js"
+                                },
+                                tools: {
+                                    name: "Docker",
+                                    name: "Git"
+                                }
+                            }
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </template>
+    </body>
 </html>
