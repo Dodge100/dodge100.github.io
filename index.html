@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>OnyxOS</title>
+        <title>onyxOS</title>
 
         <link rel="stylesheet" href="main.css" />
         <script src="main.js" defer></script>
@@ -14,13 +14,14 @@
                 <div class="dock-item" id="file-explorer-dock">🗂️</div>
                 <div class="dock-item" id="mail-dock">📨</div>
                 <div class="dock-item" id="ide-dock">💻</div>
+                <div class="dock-item" id="monitor-dock">📊</div>
             </div>
             <div id="window-append"></div>
             <div id="command-pallete" class="hidden">
                 <input
                     type="text"
                     id="command-input"
-                    placeholder="Onyx Search"
+                    placeholder="onyx search"
                     autofocus
                 />
                 <ul id="command-list"></ul>
@@ -30,18 +31,46 @@
         <template id="files-template">
             <div class="window">
                 <div class="header">
-                    <button class="close">x</button>
-                    <button class="minimize">-</button>
-                    <button class="maximize">⇱</button>
+                    <div class="window-controls">
+                        <button class="close">×</button>
+                        <button class="minimize">−</button>
+                        <button class="maximize">+</button>
+                    </div>
                     <span class="title">Files</span>
                 </div>
                 <div class="window-body">
                     <div class="files-sidebar">
-                        <div class="sidebar-folder focussed">OnyxOS</div>
-                        <div class="sidebar-folder">Retro Revival</div>
-                        <div class="sidebar-folder">Skills</div>
+                        <div class="sidebar-folder focussed">📁 OnyxOS</div>
+                        <div class="sidebar-folder">📁 Retro Revival</div>
+                        <div class="sidebar-folder">📁 Skills</div>
                     </div>
                     <div class="folder-content"></div>
+                </div>
+            </div>
+        </template>
+
+        <template id="monitor-template">
+            <div class="window">
+                <div class="header">
+                    <div class="window-controls">
+                        <button class="close">×</button>
+                        <button class="minimize">−</button>
+                        <button class="maximize">+</button>
+                    </div>
+                    <span class="title">Resource Monitor</span>
+                </div>
+                <div class="window-body">
+                    <div id="hud">
+                        <div id="cpu-info">
+                            CPU: <span id="cpu-bits">0</span> bits
+                        </div>
+                        <div id="gpu-info">
+                            GPU: <span id="gpu-bits">0</span> bits
+                        </div>
+                        <div id="optimization">
+                            Optimization progress: <span id="opt-perc">0</span>%
+                        </div>
+                    </div>
                 </div>
             </div>
         </template>
@@ -49,23 +78,37 @@
         <template id="mail-template">
             <div class="window">
                 <div class="header">
-                    <button class="close">x</button>
-                    <button class="minimize">-</button>
-                    <button class="maximize">⇱</button>
+                    <div class="window-controls">
+                        <button class="close">×</button>
+                        <button class="minimize">−</button>
+                        <button class="maximize">+</button>
+                    </div>
                     <span class="title">Mail</span>
                 </div>
                 <div class="window-body">
                     <div class="mail-sidebar">
-                        <div class="mail-item">About Me</div>
-                        <div class="mail-item">Contacts</div>
-                        <div class="mail-item focussed">How to use</div>
+                        <div class="mail-item">📥 Inbox</div>
+                        <div class="mail-item">📦 Archive</div>
+                        <div class="mail-item">🚫 Spam</div>
                     </div>
                     <div class="mail-content">
-                        <h1>How to use</h1>
+                        <h1>Welcome to onyxOS Mail</h1>
                         <p>
-                            to use this WebOS, simply open the command pallete
-                            with control+[space] or use the dock on the side to
-                            open apps
+                            <strong>Drag emails</strong> to folders to earn
+                            Bits!
+                        </p>
+                        <p>
+                            Archive emails with attachments to get files for the
+                            File Explorer.
+                        </p>
+                        <p
+                            style="
+                                color: #666;
+                                font-size: 12px;
+                                margin-top: 20px;
+                            "
+                        >
+                            Press Ctrl+Space to open command palette.
                         </p>
                     </div>
                 </div>
@@ -75,36 +118,32 @@
         <template id="ide-template">
             <div class="window">
                 <div class="header">
-                    <button class="close">x</button>
-                    <button class="minimize">-</button>
-                    <button class="maximize">⇱</button>
+                    <div class="window-controls">
+                        <button class="close">×</button>
+                        <button class="minimize">−</button>
+                        <button class="maximize">+</button>
+                    </div>
                     <span class="title">IDE</span>
                 </div>
                 <div class="window-body">
-                    <div class="mail-sidebar">
-                        <div class="mail-item">About Me</div>
-                        <div class="mail-item">Contacts</div>
-                        <div class="mail-item focussed">How to use</div>
+                    <div class="ide-sidebar">
+                        <div class="mail-item">📄 game.js</div>
                     </div>
                     <div class="ide-content">
-                        <pre>
-                            /* here's a quick overview of my teck stack */
-
-                            const techStack = {
-                                frontend: {
-                                    name: "React",
-                                    name: "Vue.js"
-                                },
-                                backend: {
-                                    name: "SQLite",
-                                    name: "Next.js"
-                                },
-                                tools: {
-                                    name: "Docker",
-                                    name: "Git"
-                                }
-                            }
-                        </pre>
+                        <div class="typing-game">
+                            <div class="prompt-elem">Type:</div>
+                            <div class="word-elem"></div>
+                            <input
+                                type="text"
+                                class="input-elem"
+                                placeholder="type here"
+                            />
+                            <div class="stats-elem">
+                                <p>WPM: <span id="wpm">0</span></p>
+                                <p>Accuracy: <span id="accuracy">0</span></p>
+                                <p>Words: <span id="complete-words">0</span></p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
