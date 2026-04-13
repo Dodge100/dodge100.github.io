@@ -1,152 +1,88 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>onyxOS</title>
-
-        <link rel="stylesheet" href="main.css" />
-        <script src="main.js" defer></script>
+        <title>dodge1</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Chivo:wght@300;900&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div id="desktop">
-            <div id="dock">
-                <div class="dock-item" id="file-explorer-dock">🗂️</div>
-                <div class="dock-item" id="mail-dock">📨</div>
-                <div class="dock-item" id="ide-dock">💻</div>
-                <div class="dock-item" id="monitor-dock">📊</div>
-            </div>
-            <div id="window-append"></div>
-            <div id="command-pallete" class="hidden">
-                <input
-                    type="text"
-                    id="command-input"
-                    placeholder="onyx search"
-                    autofocus
-                />
-                <ul id="command-list"></ul>
-            </div>
-        </div>
+        <nav>
+            <a href="#about">about</a>
+            <a href="#work">work</a>
+            <a href="#skills">skills</a>
+            <a href="#contact">contact</a>
+        </nav>
 
-        <template id="files-template">
-            <div class="window">
-                <div class="header">
-                    <div class="window-controls">
-                        <button class="close">×</button>
-                        <button class="minimize">−</button>
-                        <button class="maximize">+</button>
-                    </div>
-                    <span class="title">Files</span>
-                </div>
-                <div class="window-body">
-                    <div class="files-sidebar">
-                        <div class="sidebar-folder focussed">📁 OnyxOS</div>
-                        <div class="sidebar-folder">📁 Retro Revival</div>
-                        <div class="sidebar-folder">📁 Skills</div>
-                    </div>
-                    <div class="folder-content"></div>
-                </div>
-            </div>
-        </template>
+        <hero>
+            <h1>dodge1</h1>
+        </hero>
 
-        <template id="monitor-template">
-            <div class="window">
-                <div class="header">
-                    <div class="window-controls">
-                        <button class="close">×</button>
-                        <button class="minimize">−</button>
-                        <button class="maximize">+</button>
-                    </div>
-                    <span class="title">Resource Monitor</span>
-                </div>
-                <div class="window-body">
-                    <div id="hud">
-                        <div id="cpu-info">
-                            CPU: <span id="cpu-bits">0</span> bits
-                        </div>
-                        <div id="gpu-info">
-                            GPU: <span id="gpu-bits">0</span> bits
-                        </div>
-                        <div id="optimization">
-                            Optimization progress: <span id="opt-perc">0</span>%
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </template>
+        <content>
+            <section id="about">
+                <h2>01 / About</h2>
+                <p>
+                    hi, i'm varun (known online as dodge1), a high school
+                    student with an interest in programming, mainly web
+                    development, and robotics.
+                </p>
+                <p>
+                    more recently, i've been interested in learning about
+                    cybersecurity.
+                </p>
+            </section>
 
-        <template id="mail-template">
-            <div class="window">
-                <div class="header">
-                    <div class="window-controls">
-                        <button class="close">×</button>
-                        <button class="minimize">−</button>
-                        <button class="maximize">+</button>
-                    </div>
-                    <span class="title">Mail</span>
-                </div>
-                <div class="window-body">
-                    <div class="mail-sidebar">
-                        <div class="mail-item">📥 Inbox</div>
-                        <div class="mail-item">📦 Archive</div>
-                        <div class="mail-item">🚫 Spam</div>
-                    </div>
-                    <div class="mail-content">
-                        <h1>Welcome to onyxOS Mail</h1>
-                        <p>
-                            <strong>Drag emails</strong> to folders to earn
-                            Bits!
-                        </p>
-                        <p>
-                            Archive emails with attachments to get files for the
-                            File Explorer.
-                        </p>
-                        <p
-                            style="
-                                color: #666;
-                                font-size: 12px;
-                                margin-top: 20px;
-                            "
-                        >
-                            Press Ctrl+Space to open command palette.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </template>
+            <section id="work">
+                <h2>02 / Work</h2>
+                <work-grid>
+                    <a href="https://github.com/Dodge100/dodge100.github.io">
+                        <work-item>
+                            <h3>my site</h3>
+                            <p>source code for this site</p>
+                        </work-item>
+                    </a>
+                    <a href="https://github.com/Dodge100/gas">
+                        <work-item>
+                            <h3>gas</h3>
+                            <p>a css preprocessor adding small qol features</p>
+                        </work-item>
+                    </a>
+                    <a href="https://github.com/Dodge100/neutron">
+                        <work-item>
+                            <h3>neutron</h3>
+                            <p>macos file manager in swift</p>
+                        </work-item>
+                    </a>
+                </work-grid>
+            </section>
 
-        <template id="ide-template">
-            <div class="window">
-                <div class="header">
-                    <div class="window-controls">
-                        <button class="close">×</button>
-                        <button class="minimize">−</button>
-                        <button class="maximize">+</button>
-                    </div>
-                    <span class="title">IDE</span>
-                </div>
-                <div class="window-body">
-                    <div class="ide-sidebar">
-                        <div class="mail-item">📄 game.js</div>
-                    </div>
-                    <div class="ide-content">
-                        <div class="typing-game">
-                            <div class="prompt-elem">Type:</div>
-                            <div class="word-elem"></div>
-                            <input
-                                type="text"
-                                class="input-elem"
-                                placeholder="type here"
-                            />
-                            <div class="stats-elem">
-                                <p>WPM: <span id="wpm">0</span></p>
-                                <p>Accuracy: <span id="accuracy">0</span></p>
-                                <p>Words: <span id="complete-words">0</span></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </template>
+            <section id="skills">
+                <h2>03 / Skills</h2>
+                <skills>
+                    <skill>React</skill>
+                    <skill>Node.js</skill>
+                    <skill>Python</skill>
+                    <skill>Swift</skill>
+                    <skill>Vue.js</skill>
+                    <skill>Nuxt</skill>
+                    <skill>C++</skill>
+                    <skill>Java</skill>
+                    <skill>Docker</skill>
+                </skills>
+            </section>
+
+            <section id="contact">
+                <h2>04 / Contact</h2>
+                <socials>
+                    <a href="https://github.com/Dodge100/">GitHub</a>
+                </socials>
+            </section>
+        </content>
     </body>
 </html>

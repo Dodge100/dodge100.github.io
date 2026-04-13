@@ -1,0 +1,212 @@
+:root {
+    --bg: #0a0a0a;
+    --ink: #f5f5f5;
+    --accent: #9f009f;
+    --accent2: #00d2d2;
+    --border-width: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+    border: var(--border-width) solid var(--ink);
+    height: 100%;
+}
+
+html,
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: "Chivo", sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    height: calc(100% - 2 * var(--border-width));
+    overflow-y: auto;
+}
+
+hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+h1 {
+    font-size: clamp(5rem, 35vw, 35rem);
+    font-weight: 900;
+    line-height: 0.75;
+    letter-spacing: -0.06em;
+    position: relative;
+    color: var(--ink);
+    white-space: nowrap;
+    z-index: 999;
+}
+
+h1::before {
+    content: "dodge1";
+    position: absolute;
+    left: 0.035em;
+    top: 0.03em;
+    color: #000;
+    -webkit-text-stroke: 0.04em var(--accent);
+    z-index: -1;
+    pointer-events: none;
+}
+
+h1::after {
+    content: "dodge1";
+    position: absolute;
+    left: 0.09em;
+    top: 0.06em;
+    color: #000;
+    -webkit-text-stroke: 0.04em var(--accent2);
+    z-index: -2;
+    pointer-events: none;
+}
+
+nav {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    gap: 2rem;
+    z-index: 100;
+}
+
+nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.7rem;
+    font-weight: 300;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition:
+        opacity 0.2s,
+        color 0.2s;
+}
+
+nav a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
+
+content {
+    display: block;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 8rem 2rem;
+    position: relative;
+}
+
+section {
+    margin-bottom: 6rem;
+    display: block;
+    scroll-margin-top: 4rem;
+}
+
+section h2 {
+    font-size: 0.7rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 2rem;
+}
+
+section p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    opacity: 0.7;
+    max-width: 500px;
+    color: var(--ink);
+}
+
+work-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+work-item {
+    display: block;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition:
+        border-color 0.2s,
+        background 0.2s;
+}
+
+work-item:hover {
+    border-color: var(--accent);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+work-item h3 {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    color: var(--ink);
+}
+
+work-item p {
+    font-size: 0.8rem;
+    opacity: 0.5;
+    color: var(--ink);
+}
+
+skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+skill {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition:
+        border-color 0.2s,
+        color 0.2s;
+    color: var(--ink);
+}
+
+skill:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+socials {
+    display: flex;
+    gap: 2rem;
+}
+
+socials a {
+    color: var(--ink);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    transition:
+        opacity 0.2s,
+        color 0.2s;
+}
+
+socials a:hover {
+    opacity: 1;
+    color: var(--accent);
+}
