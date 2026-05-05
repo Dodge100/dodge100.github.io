@@ -1,8 +1,10 @@
 :root {
     --bg: #0a0a0a;
     --ink: #f5f5f5;
-    --accent: #9f009f;
-    --accent2: #00d2d2;
+    --accent: #fca311;
+    --accent2: #14213d;
+    --accent3: #ef476f;
+    --accent4: #06d6a0;
     --border-width: 8px;
 }
 
@@ -14,13 +16,8 @@
 
 html {
     scroll-behavior: smooth;
-    background: var(--bg);
     border: var(--border-width) solid var(--ink);
     height: 100%;
-}
-
-html,
-body {
     max-width: 100vw;
     overflow-x: hidden;
 }
@@ -30,7 +27,8 @@ body {
     background: var(--bg);
     color: var(--ink);
     height: calc(100% - 2 * var(--border-width));
-    overflow-y: auto;
+    overflow: auto;
+    overflow-x: hidden;
 }
 
 hero {
@@ -50,28 +48,34 @@ h1 {
     color: var(--ink);
     white-space: nowrap;
     z-index: 999;
+
+    &::before,
+    &::after {
+        content: "dodge1";
+        position: absolute;
+        color: #000;
+        -webkit-text-stroke: 0.04em var(--accent);
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    &::before {
+        left: 0.035em;
+        top: 0.03em;
+    }
+
+    &::after {
+        left: 0.09em;
+        top: 0.06em;
+        -webkit-text-stroke-color: var(--accent2);
+        z-index: -2;
+    }
 }
 
-h1::before {
-    content: "dodge1";
-    position: absolute;
-    left: 0.035em;
-    top: 0.03em;
-    color: #000;
-    -webkit-text-stroke: 0.04em var(--accent);
-    z-index: -1;
-    pointer-events: none;
-}
-
-h1::after {
-    content: "dodge1";
-    position: absolute;
-    left: 0.09em;
-    top: 0.06em;
-    color: #000;
-    -webkit-text-stroke: 0.04em var(--accent2);
-    z-index: -2;
-    pointer-events: none;
+a {
+    color: var(--accent);
+    cursor: pointer;
+    text-decoration: underline;
 }
 
 nav {
@@ -80,61 +84,92 @@ nav {
     right: 2rem;
     display: flex;
     gap: 2rem;
-    z-index: 100;
-}
+    z-index: 9999;
 
-nav a {
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 0.7rem;
-    font-weight: 300;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    opacity: 0.5;
-    transition:
-        opacity 0.2s,
-        color 0.2s;
-}
+    & a {
+        color: white;
+        mix-blend-mode: difference;
+        text-decoration: none;
+        font-size: 0.7rem;
+        font-weight: 300;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        transition:
+            opacity 0.2s,
+            color 0.2s;
 
-nav a:hover {
-    opacity: 1;
-    color: var(--accent);
+        &:link,
+        &:visited,
+        &:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        &.active {
+            opacity: 1;
+            color: var(--accent);
+            border-bottom: 1px solid var(--accent);
+            padding-bottom: 2px;
+        }
+    }
 }
 
 content {
     display: block;
     max-width: 800px;
     margin: 0 auto;
-    padding: 8rem 2rem;
+    padding: 3rem 2rem;
     position: relative;
-}
 
-section {
-    margin-bottom: 6rem;
-    display: block;
-    scroll-margin-top: 4rem;
-}
+    & section {
+        margin-bottom: 2rem;
+        display: block;
+        scroll-margin-top: 4rem;
 
-section h2 {
-    font-size: 0.7rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    color: var(--accent);
-    margin-bottom: 2rem;
-}
+        & h2 {
+            font-size: 1.05rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
 
-section p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    opacity: 0.7;
-    max-width: 500px;
-    color: var(--ink);
+        & p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.7;
+            color: var(--ink);
+        }
+    }
 }
 
 work-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
+    display: block;
+    column-count: 2;
+    column-gap: 2rem;
+}
+
+work-grid > a {
+    display: block;
+    break-inside: avoid;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+    work-grid {
+        column-count: 1;
+    }
+    work-grid > a {
+        margin-bottom: 1.5rem;
+    }
+    work-item:nth-child(2) {
+        margin-top: 0;
+    }
+}
+
+work-item:nth-child(2) {
+    margin-top: 4rem;
 }
 
 work-item {
@@ -145,68 +180,115 @@ work-item {
     transition:
         border-color 0.2s,
         background 0.2s;
-}
 
-work-item:hover {
-    border-color: var(--accent);
-    background: rgba(255, 255, 255, 0.1);
-}
+    &:hover {
+        border-color: var(--accent);
+        background: rgba(255, 255, 255, 0.1);
+    }
 
-work-item h3 {
-    font-size: 1.5rem;
-    font-weight: 900;
-    margin-bottom: 0.5rem;
-    color: var(--ink);
-}
+    & h3 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        margin-bottom: 0.5rem;
+        color: var(--ink);
+    }
 
-work-item p {
-    font-size: 0.8rem;
-    opacity: 0.5;
-    color: var(--ink);
-}
-
-skills {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
-}
-
-skill {
-    display: inline-block;
-    padding: 0.8rem 1.5rem;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    transition:
-        border-color 0.2s,
-        color 0.2s;
-    color: var(--ink);
-}
-
-skill:hover {
-    border-color: var(--accent);
-    color: var(--accent);
+    & p {
+        font-size: 0.8rem;
+        opacity: 0.5;
+        color: var(--ink);
+    }
 }
 
 socials {
     display: flex;
     gap: 2rem;
+
+    & a {
+        color: var(--ink);
+        text-decoration: none;
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        opacity: 0.5;
+        transition:
+            opacity 0.2s,
+            color 0.2s;
+
+        &:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+    }
 }
 
-socials a {
-    color: var(--ink);
-    text-decoration: none;
-    font-size: 0.8rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    opacity: 0.5;
-    transition:
-        opacity 0.2s,
-        color 0.2s;
+.github-link::before {
+    content: "";
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 1024 1024' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%2306d6a0' fill-rule='evenodd' d='M512 0C229.12 0 0 229.12 0 512c0 226.56 146.56 417.92 350.08 485.76 25.6 4.48 35.2-10.88 35.2-24.32 0-12.16-.64-52.48-.64-95.36-128.64 23.68-161.92-31.36-172.16-60.16-5.76-14.72-30.72-60.16-52.48-72.32-17.92-9.6-43.52-33.28-.64-33.92 40.32-.64 69.12 37.12 78.72 52.48 46.08 77.44 119.68 55.68 149.12 42.24 4.48-33.28 17.92-55.68 32.64-68.48-113.92-12.8-232.96-56.96-232.96-252.8 0-55.68 19.84-101.76 52.48-137.6-5.12-12.8-23.04-65.28 5.12-135.68 0 0 42.88-13.44 140.8 52.48 40.96-11.52 84.48-17.28 128-17.28s87.04 5.76 128 17.28c97.92-66.56 140.8-52.48 140.8-52.48 28.16 70.4 10.24 122.88 5.12 135.68 32.64 35.84 52.48 81.28 52.48 137.6 0 196.48-119.68 240-233.6 252.8 18.56 16 34.56 46.72 34.56 94.72 0 68.48-.64 123.52-.64 140.8 0 13.44 9.6 29.44 35.2 24.32C877.44 929.92 1024 737.92 1024 512 1024 229.12 794.88 0 512 0' clip-rule='evenodd'/%3E%3C/svg%3E");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    transition: opacity 0.2s;
 }
 
-socials a:hover {
-    opacity: 1;
-    color: var(--accent);
+.github-link:hover::before {
+    opacity: 0.6;
+}
+
+project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+project-item {
+    display: block;
+    padding: 0.7rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    & h3 {
+        font-size: 1.5rem;
+        font-weight: 900;
+        color: var(--ink);
+    }
+
+    & p {
+        font-size: 1rem;
+        opacity: 0.7;
+        margin: 0.3rem 0;
+    }
+}
+
+::selection {
+    background: var(--accent4);
+    color: var(--bg);
+}
+
+project-links {
+    position: absolute;
+    top: 1rem;
+    right: 0;
+    display: flex;
+    gap: 1.5rem;
+
+    & a {
+        font-size: 0.8rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--accent);
+        text-decoration: none;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 0.6;
+        }
+    }
 }
