@@ -1,410 +1,565 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="smooth-scroll">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="author" content="dodge1" />
+        <meta name="theme-color" content="#0a0a0f" />
+        <title>dodge1</title>
+        <meta
+            name="description"
+            content="high school student interested in robotics and cybersecurity."
+        />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;1,6..72,400&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="./style.css" />
+        <link rel="stylesheet" href="./hero-view.css" />
+    </head>
+    <body>
+        <input
+            type="radio"
+            name="theme"
+            id="theme-blueprint"
+            class="bp-state"
+            checked
+        />
+        <input type="radio" name="theme" id="theme-dark" class="bp-state" />
+        <input type="radio" name="theme" id="theme-amber" class="bp-state" />
+        <input type="radio" name="theme" id="theme-military" class="bp-state" />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="author" content="dodge1">
-  <meta name="theme-color" content="#16151d">
-  <title>dodge1 - web dev & cybersecurity</title>
-  <meta name="description" content="i build stuff for the web, robotics, and cybersecurity.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Schoolbell&family=Silkscreen:wght@400;700&display=swap"
-    rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Schoolbell&family=Silkscreen:wght@400;700&display=swap"
-      rel="stylesheet">
-  </noscript>
-  <link rel="stylesheet" href="./style.css">
-</head>
-
-<body>
-  <span class="tab-anchor" id="tab-home" aria-hidden="true"></span>
-  <span class="tab-anchor" id="tab-about" aria-hidden="true"></span>
-  <span class="tab-anchor" id="tab-projects" aria-hidden="true"></span>
-
-  <div class="page-shell">
-    <main class="site-layout">
-      <header class="masthead-card">
-        <div class="brand-block">
-          <a class="brand-mark" href="#tab-home">dodge1</a>
+        <div class="theme-tray">
+            <label
+                for="theme-blueprint"
+                class="theme-dot theme-dot-blue"
+                title="Blueprint Blue"
+            ></label>
+            <label
+                for="theme-dark"
+                class="theme-dot theme-dot-slate"
+                title="Cyber Slate"
+            ></label>
+            <label
+                for="theme-amber"
+                class="theme-dot theme-dot-amber"
+                title="CRT Amber"
+            ></label>
+            <label
+                for="theme-military"
+                class="theme-dot theme-dot-emerald"
+                title="Radar Emerald"
+            ></label>
         </div>
-        <div class="masthead-badge-stack" aria-label="External links">
-          <a class="badge-tile badge-tile-github" href="https://github.com/Dodge100" target="_blank" rel="noreferrer"
-            aria-label="GitHub">
-            <span class="badge-kicker">open</span>
-            <span class="badge-label">github</span>
-            <span class="badge-subline">my code stash</span>
-          </a>
-        </div>
-        <nav class="brand-nav" aria-label="Primary">
-          <a class="brand-nav-link brand-nav-link-home brand-nav-link-active" href="#tab-home">home</a>
-          <a class="brand-nav-link brand-nav-link-about" href="#tab-about">about</a>
-          <a class="brand-nav-link brand-nav-link-projects" href="#tab-projects">projects</a>
-        </nav>
-      </header>
 
-      <div class="tab-stage">
-        <div class="tab-track">
-          <!-- HOME TAB -->
-          <section class="tab-panel">
-            <div class="main-grid home-grid">
-              <div class="main-stack">
-                <section class="panel-card intro-card">
-                  <div class="avatar-shell" aria-hidden="true">
-                    <div class="avatar-ring">
-                      <div class="avatar-core">
-                        <span>D1</span>
-                      </div>
+        <div class="page">
+            <header class="mast">
+                <nav class="mast-nav">
+                    <a href="#about">About</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+
+            <main>
+                <section class="hero hero-split">
+                    <div class="hero-left">
+                        <h1 class="hero-title">varun</h1>
+                        <p class="hero-sub">
+                            high school student interested in robotics and
+                            cybersecurity.
+                        </p>
                     </div>
-                  </div>
-                  <div class="intro-copy">
-                    <h1 class="intro-title">hi, i'm <span>dodge1!</span></h1>
-                    <p class="intro-text">
-                      high school student, web dev & cybersecurity.
-                    </p>
-                    <div class="intro-links">
-                      <a href="#tab-about">about me</a>
-                      <a href="#tab-projects">my projects</a>
-                    </div>
-                  </div>
-                </section>
+                    <div class="hero-right">
+                        <div class="hero-viewport">
+                            <div class="bp-scene">
+                                <div
+                                    class="bp-layer layer-bottom-case"
+                                    style="z-index: 10"
+                                >
+                                    <svg viewBox="0 0 360 360" fill="none">
+                                        <use
+                                            href="assets/layer-bottom-case.svg#root"
+                                        />
+                                    </svg>
+                                </div>
 
-                <section class="panel-card about-card">
-                  <h2 class="section-title">quick intro!</h2>
-                  <div class="about-copy">
-                    <p>
-                      First off, hi! My name is Varun, and I love to build things.
-                      I'm a high school student with a deep interest in programming,
-                      mainly web development and robotics. (see more <a href="#tab-about">here</a>)
-                    </p>
-                    <p>
-                      I obsess over creating things that are clean, functional, and fun to use.
-                      More recently I've been diving into cybersecurity — doing CTF challenges
-                      and learning how systems break so I can better understand how to build them.
-                    </p>
-                    <p>
-                      I also compete in FIRST robotics, build games in Godot, and hack together
-                      CLI tools in Go. If you want to chat about a project or just say hi, feel
-                      free to <a href="https://github.com/Dodge100" target="_blank" rel="noreferrer">reach out!</a>
-                    </p>
-                  </div>
-                </section>
+                                <div
+                                    class="bp-layer layer-motherboard"
+                                    style="z-index: 20"
+                                >
+                                    <svg viewBox="0 0 360 360" fill="none">
+                                        <use
+                                            href="assets/layer-motherboard.svg#root"
+                                        />
+                                    </svg>
+                                </div>
 
-                <section class="panel-card badges-card">
-                  <h2 class="section-title">friends & links</h2>
-                  <div class="badge-grid" aria-label="88x31 links">
-                    <a class="badge-tile badge-tile-own" href="https://github.com/Dodge100" target="_blank" rel="noreferrer"
-                      aria-label="GitHub">
-                      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 88 31'%3E%3Crect width='88' height='31' fill='%2316151d' rx='2'/%3E%3Ctext x='44' y='19' text-anchor='middle' fill='%23d58ef5' font-family='monospace' font-size='10' font-weight='bold'%3Egithub%3C/text%3E%3C/svg%3E" alt="github 88x31 button" width="88" height="31">
-                    </a>
-                  </div>
-                </section>
-              </div>
+                                <div
+                                    class="bp-layer layer-cpu-ram"
+                                    style="z-index: 30"
+                                >
+                                    <svg viewBox="0 0 360 360" fill="none">
+                                        <use
+                                            href="assets/layer-cpu-ram.svg#root"
+                                        />
+                                    </svg>
+                                </div>
 
-              <aside class="sidebar-stack">
-                <section class="panel-card sidebar-card status-card">
-                  <div class="status-screen">
-                    <div class="status-screen-head">
-                      <div class="status-avatar-wrap">
-                        <div class="status-avatar" style="display:grid;place-items:center;font-family:Silkscreen,monospace;font-size:1.4rem;color:#d58ef5;background:#17161e;">D1</div>
-                        <span class="status-dot" style="background:#6fe29d;"></span>
-                      </div>
-                      <div class="status-head-copy">
-                        <div class="status-ident">
-                          <p class="status-name">dodge1</p>
-                          <p class="status-handle">@Dodge100</p>
+                                <div
+                                    class="bp-layer layer-cooling"
+                                    style="z-index: 40"
+                                >
+                                    <svg viewBox="0 0 360 360" fill="none">
+                                        <use
+                                            href="assets/layer-cooling.svg#root"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <div
+                                    class="bp-layer layer-switches"
+                                    style="z-index: 50"
+                                >
+                                    <svg viewBox="0 0 360 360" fill="none">
+                                        <use
+                                            href="assets/layer-switches.svg#root"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <div
+                                    class="bp-layer layer-keycaps"
+                                    style="z-index: 60"
+                                >
+                                    <svg viewBox="0 0 360 360" fill="none">
+                                        <use
+                                            href="assets/layer-keycaps.svg#root"
+                                        />
+                                    </svg>
+                                </div>
+
+                                <div class="screen-group">
+                                    <div
+                                        class="bp-layer layer-screen-case"
+                                        style="z-index: 70"
+                                    >
+                                        <svg viewBox="0 0 360 360" fill="none">
+                                            <use
+                                                href="assets/layer-screen-case.svg#root"
+                                            />
+                                        </svg>
+                                    </div>
+
+                                    <div
+                                        class="bp-layer layer-display"
+                                        style="z-index: 80"
+                                    >
+                                        <svg viewBox="0 0 360 360" fill="none">
+                                            <use
+                                                href="assets/layer-display.svg#root"
+                                            />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <p class="status-line">building cool stuff</p>
-                      </div>
                     </div>
-                  </div>
                 </section>
-              </aside>
-            </div>
-          </section>
 
-          <!-- ABOUT TAB -->
-          <section class="tab-panel">
-            <div class="main-grid about-grid">
-              <div class="main-stack about-stack">
-                <section class="panel-card workspace-board">
-                  <div class="workspace-board-head">
-                    <div class="workspace-board-head-copy">
-                      <p class="eyebrow">about me</p>
-                      <h1 class="page-title">my about-board</h1>
-                      <p class="workspace-board-note">who i am, what i do, and what i love!</p>
-                    </div>
-                  </div>
-                  <div class="workspace-canvas" aria-label="Workspace board with quick facts">
-                    <article class="whiteboard-card">
-                      <h2 class="whiteboard-title">👋 hi, i'm varun!</h2>
-                      <p class="whiteboard-copy">
-                        known online as dodge1. i build stuff for the web, mess around with robots,
-                        and break things (on purpose) for cybersecurity.
-                      </p>
-                      <p class="whiteboard-copy">
-                        i've built tools like a CSS preprocessor, a macOS file manager, a connect 4
-                        engine in 24 hours, and contributed to hackclub game jams. i'm always learning
-                        something new — currently deep in security research and CTF challenges.
-                      </p>
-                      <div class="whiteboard-tags" aria-label="Core strengths">
-                        <span>web dev</span>
-                        <span>robotics</span>
-                        <span>cybersecurity</span>
-                        <span>game dev</span>
-                        <span>tooling</span>
-                        <span>go</span>
-                      </div>
-                    </article>
-
-                    <span class="chalk-doodle chalk-doodle-cube" aria-hidden="true"></span>
-                    <span class="chalk-doodle chalk-doodle-stars" aria-hidden="true"></span>
-                    <span class="chalk-doodle chalk-doodle-sparkle" aria-hidden="true"></span>
-                    <span class="chalk-doodle chalk-doodle-heart" aria-hidden="true"></span>
-
-                    <span class="chalk-hidden-note chalk-hidden-note-role" aria-hidden="true">keep building cool stuff</span>
-                    <span class="chalk-hidden-note chalk-hidden-note-vibe" aria-hidden="true">ctrl+s before it breaks</span>
-                    <span class="chalk-hidden-note chalk-hidden-note-focus" aria-hidden="true">powered by coffee</span>
-                    <span class="chalk-hidden-note chalk-hidden-note-care" aria-hidden="true">made with love, care, and late nights</span>
-
-                    <article class="sticky-note sticky-note-gold sticky-note-role" data-sticky-note
-                      data-note-rotate="-4">
-                      <p class="sticky-note-kicker">what i do</p>
-                      <p class="sticky-note-copy">i'm a web dev & cybersecurity enthusiast. i specialize in
-                        html, css, javascript, go, python, and swift.</p>
-                    </article>
-
-                    <article class="sticky-note sticky-note-mint sticky-note-vibe" data-sticky-note
-                      data-note-rotate="5">
-                      <p class="sticky-note-kicker">my "build philosophy"</p>
-                      <p class="sticky-note-copy">when i build something, i obsess over
-                        clean design and solid functionality.
-                        i believe the best tools are ones you barely notice using.
-                      </p>
-                    </article>
-
-                    <article class="sticky-note sticky-note-blue sticky-note-focus" data-sticky-note
-                      data-note-rotate="-3">
-                      <p class="sticky-note-kicker">some fun facts about me!</p>
-                      <p class="sticky-note-copy">i built a connect 4 engine in one day for a hackathon.
-                        i also love robotics, godot games, and iced coffee.</p>
-                    </article>
-
-                    <article class="sticky-note sticky-note-pink sticky-note-care" data-sticky-note
-                      data-note-rotate="4">
-                      <p class="sticky-note-kicker">other skills & specialties</p>
-                      <p class="sticky-note-copy">i have experience with figma, godot, linux, neovim,
-                        and i regularly contribute to hackclub ysws events.
-                      </p>
-                    </article>
-                  </div>
+                <section id="about" class="section-body">
+                    <p>
+                        hi, i'm Varun, but you can usually find me as
+                        <strong>dodge1</strong> online.
+                    </p>
+                    <p>
+                        i'm a high school student who likes trying new things
+                        and learning as much as i can about software.
+                    </p>
                 </section>
-              </div>
-            </div>
-          </section>
 
-          <!-- PROJECTS TAB -->
-          <section class="tab-panel">
-            <div class="projects-layout">
-              <section class="panel-card page-intro-card">
-                <div class="projects-hero-copy">
-                  <p class="eyebrow">projects</p>
-                  <h1 class="page-title">clients & work</h1>
-                  <p class="page-summary">
-                    some of the stuff i've built, worked on, and created!
-                  </p>
-                </div>
-              </section>
+                <section id="projects">
+                    <input
+                        type="radio"
+                        name="proj-slide"
+                        id="proj-1"
+                        class="carousel-state"
+                        checked
+                    />
+                    <input
+                        type="radio"
+                        name="proj-slide"
+                        id="proj-2"
+                        class="carousel-state"
+                    />
+                    <input
+                        type="radio"
+                        name="proj-slide"
+                        id="proj-3"
+                        class="carousel-state"
+                    />
+                    <input
+                        type="radio"
+                        name="proj-slide"
+                        id="proj-4"
+                        class="carousel-state"
+                    />
+                    <input
+                        type="radio"
+                        name="proj-slide"
+                        id="proj-5"
+                        class="carousel-state"
+                    />
 
-              <section class="panel-card projects-board">
-                <div class="projects-board-head">
-                  <div>
-                    <h2 class="section-title">projects</h2>
-                    <p class="projects-board-copy">stuff i've built, broken, and fixed again.</p>
-                  </div>
-                </div>
+                    <div class="projects-layout">
+                        <section class="panel-card active-projects-card">
+                            <div class="projects-board-head">
+                                <div>
+                                    <h2 class="section-title">
+                                        featured projects
+                                    </h2>
+                                    <p class="projects-board-copy">
+                                        cool stuff i've made
+                                    </p>
+                                </div>
+                                <p class="project-carousel-count">
+                                    <span data-current="1">01/05</span>
+                                    <span data-current="2">02/05</span>
+                                    <span data-current="3">03/05</span>
+                                    <span data-current="4">04/05</span>
+                                    <span data-current="5">05/05</span>
+                                </p>
+                            </div>
 
-                <div class="project-grid">
-                  <a class="project-card" href="https://github.com/Dodge100/gas" target="_blank" rel="noreferrer">
-                    <span class="project-card-year">2025</span>
-                    <div class="project-card-head">
-                      <h3>gas</h3>
-                      <span>css preprocessor</span>
-                    </div>
-                    <p class="project-card-copy">
-                      A CSS preprocessor adding tailwind-style class parameters, mixins, and QOL features.
-                    </p>
-                    <div class="project-tag-row" aria-label="gas focus areas">
-                      <span class="project-tag">css</span>
-                      <span class="project-tag">tooling</span>
-                      <span class="project-tag">preprocessor</span>
-                    </div>
-                    <span class="project-card-action">open project →</span>
-                  </a>
+                            <div class="project-carousel-screen">
+                                <div class="project-carousel-slides">
+                                    <article
+                                        class="project-carousel-slide"
+                                        data-index="0"
+                                    >
+                                        <label
+                                            for="proj-1"
+                                            class="slide-click-target"
+                                        ></label>
+                                        <div class="project-card-head">
+                                            <h3>gas</h3>
+                                            <span>css preprocessor</span>
+                                        </div>
+                                        <p class="project-card-copy">
+                                            CSS preprocessor adding
+                                            tailwind-style class parameters,
+                                            mixins, and QOL features for faster
+                                            styling.
+                                        </p>
+                                        <div class="project-tag-row">
+                                            <span class="project-tag">css</span>
+                                            <span class="project-tag"
+                                                >tooling</span
+                                            >
+                                            <span class="project-tag"
+                                                >preprocessor</span
+                                            >
+                                        </div>
+                                        <a
+                                            class="project-card-action project-inline-action"
+                                            href="https://github.com/Dodge100/gas"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >open project</a
+                                        >
+                                    </article>
 
-                  <a class="project-card" href="https://github.com/Dodge100/neutron" target="_blank" rel="noreferrer">
-                    <span class="project-card-year">2025</span>
-                    <div class="project-card-head">
-                      <h3>neutron</h3>
-                      <span>file manager</span>
-                    </div>
-                    <p class="project-card-copy">
-                      Dual-pane macOS file manager built in Swift. Forklift vibes, fully native.
-                    </p>
-                    <div class="project-tag-row" aria-label="neutron focus areas">
-                      <span class="project-tag">swift</span>
-                      <span class="project-tag">macos</span>
-                      <span class="project-tag">native</span>
-                    </div>
-                    <span class="project-card-action">open project →</span>
-                  </a>
+                                    <article
+                                        class="project-carousel-slide"
+                                        data-index="1"
+                                    >
+                                        <label
+                                            for="proj-2"
+                                            class="slide-click-target"
+                                        ></label>
+                                        <div class="project-card-head">
+                                            <h3>neutron</h3>
+                                            <span>macos file manager</span>
+                                        </div>
+                                        <p class="project-card-copy">
+                                            dual-pane macOS file manager built
+                                            in Swift. provides native
+                                            performance like finder with more
+                                            features.
+                                        </p>
+                                        <div class="project-tag-row">
+                                            <span class="project-tag"
+                                                >swift</span
+                                            >
+                                            <span class="project-tag"
+                                                >macos</span
+                                            >
+                                            <span class="project-tag"
+                                                >native</span
+                                            >
+                                        </div>
+                                        <a
+                                            class="project-card-action project-inline-action"
+                                            href="https://github.com/Dodge100/neutron"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >open project</a
+                                        >
+                                    </article>
 
-                  <a class="project-card" href="https://github.com/Dodge100/dodge100.github.io" target="_blank" rel="noreferrer">
-                    <span class="project-card-year">2025</span>
-                    <div class="project-card-head">
-                      <h3>my site</h3>
-                      <span>this website</span>
-                    </div>
-                    <p class="project-card-copy">
-                      Source code for this very site. Meta, I know.
-                    </p>
-                    <div class="project-tag-row" aria-label="my site focus areas">
-                      <span class="project-tag">html</span>
-                      <span class="project-tag">css</span>
-                      <span class="project-tag">design</span>
-                    </div>
-                    <span class="project-card-action">open project →</span>
-                  </a>
+                                    <article
+                                        class="project-carousel-slide"
+                                        data-index="2"
+                                    >
+                                        <label
+                                            for="proj-3"
+                                            class="slide-click-target"
+                                        ></label>
+                                        <div class="project-card-head">
+                                            <h3>breadboard</h3>
+                                            <span>macos utility</span>
+                                        </div>
+                                        <p class="project-card-copy">
+                                            macOS utility app designed to reduce
+                                            performance overhead while providing
+                                            more features.
+                                        </p>
+                                        <div class="project-tag-row">
+                                            <span class="project-tag"
+                                                >macos</span
+                                            >
+                                            <span class="project-tag"
+                                                >utility</span
+                                            >
+                                            <span class="project-tag"
+                                                >native</span
+                                            >
+                                        </div>
+                                        <span class="project-card-action"
+                                            >open project</span
+                                        >
+                                    </article>
 
-                  <a class="project-card" href="https://github.com/Dodge100/mach-one" target="_blank" rel="noreferrer">
-                    <span class="project-card-year">2024</span>
-                    <div class="project-card-head">
-                      <h3>mach one</h3>
-                      <span>connect 4 engine</span>
-                    </div>
-                    <p class="project-card-copy">
-                      CLI + GUI for a Connect 4 engine built in one day for a hackathon.
-                    </p>
-                    <div class="project-tag-row" aria-label="mach one focus areas">
-                      <span class="project-tag">game</span>
-                      <span class="project-tag">ai</span>
-                      <span class="project-tag">hackathon</span>
-                    </div>
-                    <span class="project-card-action">open project →</span>
-                  </a>
+                                    <article
+                                        class="project-carousel-slide"
+                                        data-index="3"
+                                    >
+                                        <label
+                                            for="proj-4"
+                                            class="slide-click-target"
+                                        ></label>
+                                        <div class="project-card-head">
+                                            <h3>language</h3>
+                                            <span>interpreter in go</span>
+                                        </div>
+                                        <p class="project-card-copy">
+                                            a simple lexer, interpreter, and
+                                            parser written in Go
+                                        </p>
+                                        <div class="project-tag-row">
+                                            <span class="project-tag">go</span>
+                                            <span class="project-tag"
+                                                >compiler</span
+                                            >
+                                            <span class="project-tag"
+                                                >learning</span
+                                            >
+                                        </div>
+                                        <a
+                                            class="project-card-action project-inline-action"
+                                            href="https://github.com/Dodge100/language"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >open project</a
+                                        >
+                                    </article>
 
-                  <a class="project-card" href="https://github.com/Dodge100/chameleon-chrome-port" target="_blank" rel="noreferrer">
-                    <span class="project-card-year">2024</span>
-                    <div class="project-card-head">
-                      <h3>chameleon</h3>
-                      <span>chrome extension</span>
-                    </div>
-                    <p class="project-card-copy">
-                      Port of chameleon, a periodic UA switcher with privacy features, for Chromium.
-                    </p>
-                    <div class="project-tag-row" aria-label="chameleon focus areas">
-                      <span class="project-tag">privacy</span>
-                      <span class="project-tag">extension</span>
-                      <span class="project-tag">chrome</span>
-                    </div>
-                    <span class="project-card-action">open project →</span>
-                  </a>
+                                    <article
+                                        class="project-carousel-slide"
+                                        data-index="4"
+                                    >
+                                        <label
+                                            for="proj-5"
+                                            class="slide-click-target"
+                                        ></label>
+                                        <div class="project-card-head">
+                                            <h3>playphone</h3>
+                                            <span>platformer game</span>
+                                        </div>
+                                        <p class="project-card-copy">
+                                            my contribution to a Hackclub
+                                            pass-the-game style challenge.
+                                        </p>
+                                        <div class="project-tag-row">
+                                            <span class="project-tag"
+                                                >game</span
+                                            >
+                                            <span class="project-tag"
+                                                >hackclub</span
+                                            >
+                                            <span class="project-tag"
+                                                >godot</span
+                                            >
+                                        </div>
+                                        <a
+                                            class="project-card-action project-inline-action"
+                                            href="https://dodge100.itch.io/playphone"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >open project</a
+                                        >
+                                    </article>
+                                </div>
+                            </div>
 
-                  <a class="project-card" href="https://github.com/Dodge100/language" target="_blank" rel="noreferrer">
-                    <span class="project-card-year">2024</span>
-                    <div class="project-card-head">
-                      <h3>language</h3>
-                      <span>interpreter</span>
-                    </div>
-                    <p class="project-card-copy">
-                      A simple lexer, interpreter, and parser written in Go.
-                    </p>
-                    <div class="project-tag-row" aria-label="language focus areas">
-                      <span class="project-tag">go</span>
-                      <span class="project-tag">compiler</span>
-                      <span class="project-tag">learning</span>
-                    </div>
-                    <span class="project-card-action">open project →</span>
-                  </a>
+                            <div class="testimonial-dots">
+                                <label
+                                    for="proj-1"
+                                    class="testimonial-dot"
+                                ></label>
+                                <label
+                                    for="proj-2"
+                                    class="testimonial-dot"
+                                ></label>
+                                <label
+                                    for="proj-3"
+                                    class="testimonial-dot"
+                                ></label>
+                                <label
+                                    for="proj-4"
+                                    class="testimonial-dot"
+                                ></label>
+                                <label
+                                    for="proj-5"
+                                    class="testimonial-dot"
+                                ></label>
+                            </div>
+                        </section>
 
-                  <a class="project-card" href="https://github.com/Dodge100/retro-revival" target="_blank" rel="noreferrer">
-                    <span class="project-card-year">wip</span>
-                    <div class="project-card-head">
-                      <h3>retro revival</h3>
-                      <span>godot game</span>
-                    </div>
-                    <p class="project-card-copy">
-                      Retro-styled platformer built in Godot. Work in progress.
-                    </p>
-                    <div class="project-tag-row" aria-label="retro revival focus areas">
-                      <span class="project-tag">godot</span>
-                      <span class="project-tag">game</span>
-                      <span class="project-tag">gamedev</span>
-                    </div>
-                    <span class="project-card-action">open project →</span>
-                  </a>
+                        <section class="panel-card projects-board">
+                            <div class="projects-board-head">
+                                <div>
+                                    <h2 class="section-title">
+                                        other projects
+                                    </h2>
+                                    <p class="projects-board-copy">
+                                        older projects and experiments
+                                    </p>
+                                </div>
+                            </div>
 
-                  <a class="project-card" href="https://dodge100.itch.io/playphone" target="_blank" rel="noreferrer">
-                    <span class="project-card-year">2024</span>
-                    <div class="project-card-head">
-                      <h3>playphone</h3>
-                      <span>game jam</span>
+                            <div class="project-grid">
+                                <a
+                                    class="project-card"
+                                    href="https://github.com/Dodge100/dodge100.github.io"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <div class="project-card-head">
+                                        <h3>my site</h3>
+                                        <span>personal site</span>
+                                    </div>
+                                    <p class="project-card-copy">
+                                        source for this very site. meta.
+                                    </p>
+                                    <div class="project-tag-row">
+                                        <span class="project-tag">html</span>
+                                        <span class="project-tag">css</span>
+                                    </div>
+                                    <span class="project-card-action"
+                                        >open project</span
+                                    >
+                                </a>
+                                <a
+                                    class="project-card"
+                                    href="https://github.com/Dodge100/mach-one"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <div class="project-card-head">
+                                        <h3>mach one</h3>
+                                        <span>connect 4 engine</span>
+                                    </div>
+                                    <p class="project-card-copy">
+                                        connect 4 engine built in 24h for a
+                                        hackathon
+                                    </p>
+                                    <div class="project-tag-row">
+                                        <span class="project-tag">game</span>
+                                        <span class="project-tag">ai</span>
+                                    </div>
+                                    <span class="project-card-action"
+                                        >open project</span
+                                    >
+                                </a>
+                                <a
+                                    class="project-card"
+                                    href="https://github.com/Dodge100/chameleon-chrome-port"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <div class="project-card-head">
+                                        <h3>chameleon</h3>
+                                        <span>ua switcher</span>
+                                    </div>
+                                    <p class="project-card-copy">
+                                        ua switcher privacy extension ported to
+                                        chromium
+                                    </p>
+                                    <div class="project-tag-row">
+                                        <span class="project-tag">privacy</span>
+                                        <span class="project-tag"
+                                            >extension</span
+                                        >
+                                    </div>
+                                    <span class="project-card-action"
+                                        >open project</span
+                                    >
+                                </a>
+                                <a
+                                    class="project-card"
+                                    href="https://github.com/Dodge100/retro-revival"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    <div class="project-card-head">
+                                        <h3>retro revival</h3>
+                                    </div>
+                                    <p class="project-card-copy">
+                                        retro platformer built in godot
+                                    </p>
+                                    <div class="project-tag-row">
+                                        <span class="project-tag">godot</span>
+                                        <span class="project-tag">gamedev</span>
+                                    </div>
+                                    <span class="project-card-action"
+                                        >open project</span
+                                    >
+                                </a>
+                            </div>
+                        </section>
                     </div>
-                    <p class="project-card-copy">
-                      Contribution to Hackclub's Playphone YSWS — a platformer pass-the-game challenge.
-                    </p>
-                    <div class="project-tag-row" aria-label="playphone focus areas">
-                      <span class="project-tag">game</span>
-                      <span class="project-tag">hackclub</span>
-                      <span class="project-tag">ysws</span>
+                </section>
+
+                <section class="bp-section">
+                    <div class="bp-controls">
+                        <label class="bp-checkbox-row">
+                            <input
+                                type="checkbox"
+                                id="explode-trigger"
+                                checked
+                            />
+                            <span>Explode Assembly</span>
+                        </label>
+                        <label class="bp-checkbox-row">
+                            <input type="checkbox" id="rotate-trigger" />
+                            <span>Camera Spin</span>
+                        </label>
                     </div>
-                    <span class="project-card-action">open project →</span>
-                  </a>
-                </div>
-              </section>
-            </div>
-          </section>
+                </section>
+            </main>
         </div>
-      </div>
-
-      <footer class="footer-banner">
-        <p class="footer-copy">© dodge1 ~ building cool stuff</p>
-        <div class="footer-links" aria-label="Footer links">
-          <a class="footer-link" href="#tab-home">home</a>
-          <a class="footer-link" href="#tab-about">about</a>
-          <a class="footer-link" href="#tab-projects">projects</a>
-        </div>
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    // Tab switching using CSS :has() - handles initial load
-    (function() {
-      function activateTab(hash) {
-        const id = hash.replace('#', '') || 'home';
-        // Update nav active states
-        document.querySelectorAll('.brand-nav-link').forEach(function(link) {
-          var isActive = link.getAttribute('href') === '#' + id;
-          link.classList.toggle('brand-nav-link-active', isActive);
-        });
-      }
-
-      function handleHash() {
-        activateTab(location.hash || '#home');
-      }
-
-      window.addEventListener('hashchange', handleHash);
-      window.addEventListener('load', handleHash);
-      if (!location.hash) {
-        history.replaceState(null, '', '#home');
-        activateTab('#home');
-      }
-    })();
-  </script>
-</body>
+    </body>
 </html>
