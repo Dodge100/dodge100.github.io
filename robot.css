@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eef3fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.scene {
+  max-width: 1140px;
+  width: 100%;
+}
+
+.scene svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.box-on-belt {
+  animation: box-convey 14s ease-in-out infinite;
+}
+@keyframes box-convey {
+  0%   { transform: translate(200px, 490px); opacity: 1; }
+  24%  { transform: translate(460px, 490px); opacity: 1; }
+  24.001% { transform: translate(460px, 490px); opacity: 0; }
+  100% { transform: translate(460px, 490px); opacity: 0; }
+}
+
+.finger-left {
+  animation: finger-left-move 14s ease-in-out infinite;
+}
+.finger-right {
+  animation: finger-right-move 14s ease-in-out infinite;
+}
+@keyframes finger-left-move {
+  0%, 29%  { transform: translateX(0); }
+  33%      { transform: translateX(6px); }
+  63%      { transform: translateX(6px); }
+  71%      { transform: translateX(0); }
+  100%     { transform: translateX(0); }
+}
+@keyframes finger-right-move {
+  0%, 29%  { transform: translateX(0); }
+  33%      { transform: translateX(-6px); }
+  63%      { transform: translateX(-6px); }
+  71%      { transform: translateX(0); }
+  100%     { transform: translateX(0); }
+}
+
+.box-in-gripper {
+  animation: box-in-grip 14s ease-in-out infinite;
+}
+@keyframes box-in-grip {
+  0%   { opacity: 0; }
+  29%  { opacity: 0; }
+  29.001% { opacity: 1; }
+  33%  { opacity: 1; }
+  67%  { opacity: 1; }
+  67.001% { opacity: 0; }
+  100% { opacity: 0; }
+}
