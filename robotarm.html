@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Robot Arm Conveyor System</title>
+<link rel="stylesheet" href="robot.css">
+</head>
+<body>
+<div class="scene">
+  <svg viewBox="0 0 1100 700" xmlns="http://www.w3.org/2000/svg">
+    <rect x="100" y="340" width="160" height="240" fill="#dce6f2" stroke="#4488ff" stroke-width="2"/>
+    <rect x="200" y="456" width="60" height="68" rx="4" fill="#eef3fa" stroke="#4488ff" stroke-width="2"/>
+    <rect x="100" y="336" width="130" height="8" rx="2" fill="#f0f6ff" stroke="#4488ff" stroke-width="1.5"/>
+
+    <g class="conveyor">
+      <rect x="200" y="504" width="280" height="6" rx="2" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+      <rect x="200" y="534" width="280" height="6" rx="2" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+      <rect x="205" y="510" width="270" height="24" rx="2" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+      <circle cx="215" cy="522" r="12" fill="#ffffff" stroke="#4488ff" stroke-width="2"/>
+      <circle cx="215" cy="522" r="4" fill="#ddeeff"/>
+      <circle cx="465" cy="522" r="12" fill="#ffffff" stroke="#4488ff" stroke-width="2"/>
+      <circle cx="465" cy="522" r="4" fill="#ddeeff"/>
+    </g>
+
+    <g class="box-on-belt">
+      <g class="box">
+        <rect x="-28" y="-20" width="56" height="40" rx="2" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+        <text x="0" y="6" text-anchor="middle" fill="#4488ff" font-family="monospace" font-size="9" opacity="0.5">BOX</text>
+      </g>
+    </g>
+
+    <g class="arm-base" transform="translate(400, 370)">
+      <path d="M-28,0 L-20,-36 L20,-36 L28,0 Z" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+      <ellipse cx="0" cy="0" rx="28" ry="7" fill="#f0f6ff" stroke="#4488ff" stroke-width="1.5"/>
+      <ellipse cx="0" cy="-36" rx="20" ry="5" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+
+      <g class="upper-arm">
+        <animateTransform attributeName="transform" type="rotate"
+          values="0 0 -36; 61.2 0 -36; 61.2 0 -36; 75 0 -36; 93 0 -36; 93 0 -36; 30 0 -36; 0 0 -36"
+          keyTimes="0; 0.25; 0.33; 0.42; 0.63; 0.71; 0.79; 1"
+          dur="14s" repeatCount="indefinite"/>
+        <path d="M-12,-36 L12,-36 L9,88 L-9,88 Z" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+        <circle cx="0" cy="-36" r="16" fill="#f0f6ff" stroke="#4488ff" stroke-width="2"/>
+        <circle cx="0" cy="-36" r="6" fill="#ddeeff"/>
+        <circle cx="0" cy="-36" r="2.5" fill="#4488ff"/>
+
+        <g class="forearm">
+          <animateTransform attributeName="transform" type="rotate"
+            values="0 0 88; -88.1 0 88; -88.1 0 88; -75 0 88; -61.6 0 88; -61.6 0 88; -20 0 88; 0 0 88"
+            keyTimes="0; 0.25; 0.33; 0.42; 0.63; 0.71; 0.79; 1"
+            dur="14s" repeatCount="indefinite"/>
+          <path d="M-9,88 L9,88 L7,196 L-7,196 Z" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+          <circle cx="0" cy="88" r="12" fill="#f0f6ff" stroke="#4488ff" stroke-width="2"/>
+          <circle cx="0" cy="88" r="5" fill="#ddeeff"/>
+          <circle cx="0" cy="88" r="2" fill="#4488ff"/>
+
+          <g class="gripper">
+            <circle cx="0" cy="196" r="9" fill="#f0f6ff" stroke="#4488ff" stroke-width="1.5"/>
+            <rect x="-7" y="196" width="14" height="8" rx="2" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+
+            <rect x="-42" y="202" width="18" height="42" rx="3" fill="#ffffff" stroke="#4488ff" stroke-width="1.5" class="finger-left"/>
+            <rect x="24" y="202" width="18" height="42" rx="3" fill="#ffffff" stroke="#4488ff" stroke-width="1.5" class="finger-right"/>
+
+            <g class="box-in-gripper">
+              <g class="box" transform="translate(0, 200)">
+                <rect x="-28" y="-20" width="56" height="40" rx="2" fill="#ffffff" stroke="#4488ff" stroke-width="1.5"/>
+                <text x="0" y="6" text-anchor="middle" fill="#4488ff" font-family="monospace" font-size="9" opacity="0.5">BOX</text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+
+    <g class="truck">
+      <rect x="540" y="380" width="150" height="150" rx="2" fill="#ffffff" stroke="#4488ff" stroke-width="2"/>
+      <rect x="545" y="385" width="140" height="140" rx="1" fill="none" stroke="#4488ff" stroke-width="1" opacity="0.3"/>
+      <line x1="540" y1="520" x2="690" y2="520" stroke="#4488ff" stroke-width="1" opacity="0.4"/>
+      <path d="M560,530 Q615,490 670,530" fill="none" stroke="#4488ff" stroke-width="1.5"/>
+      <circle cx="615" cy="560" r="30" fill="#ffffff" stroke="#4488ff" stroke-width="2"/>
+      <circle cx="615" cy="560" r="14" fill="#ddeeff" stroke="#4488ff" stroke-width="1"/>
+      <circle cx="615" cy="560" r="4" fill="#4488ff"/>
+    </g>
+  </svg>
+</div>
+</body>
+</html>
