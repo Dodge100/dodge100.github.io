@@ -1,0 +1,145 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="root"
+    viewBox="0 0 360 360"
+    fill="none"
+>
+    <!-- Outer case outline -->
+    <rect
+        x="25"
+        y="55"
+        width="310"
+        height="230"
+        rx="14"
+        fill="var(--primary-fill)"
+        stroke="var(--primary-line)"
+        stroke-width="2"
+    />
+    <!-- Tapered inner ledge -->
+    <rect
+        x="32"
+        y="62"
+        width="296"
+        height="216"
+        rx="10"
+        fill="none"
+        stroke="var(--primary-line)"
+        stroke-width="1"
+        opacity="0.25"
+    />
+    <rect
+        x="38"
+        y="68"
+        width="284"
+        height="204"
+        rx="8"
+        fill="none"
+        stroke="var(--primary-line)"
+        stroke-width="0.5"
+        opacity="0.15"
+    />
+    <!-- Hinge barrel area at top -->
+    <rect
+        x="100"
+        y="55"
+        width="160"
+        height="14"
+        rx="7"
+        fill="var(--primary-fill)"
+        stroke="var(--primary-line)"
+        stroke-width="1.5"
+    />
+    <line
+        x1="115"
+        y1="55"
+        x2="115"
+        y2="69"
+        stroke="var(--primary-line)"
+        stroke-width="0.6"
+        opacity="0.4"
+    />
+    <line
+        x1="145"
+        y1="55"
+        x2="145"
+        y2="69"
+        stroke="var(--primary-line)"
+        stroke-width="0.6"
+        opacity="0.4"
+    />
+    <line
+        x1="180"
+        y1="55"
+        x2="180"
+        y2="69"
+        stroke="var(--primary-line)"
+        stroke-width="0.6"
+        opacity="0.4"
+    />
+    <line
+        x1="215"
+        y1="55"
+        x2="215"
+        y2="69"
+        stroke="var(--primary-line)"
+        stroke-width="0.6"
+        opacity="0.4"
+    />
+    <line
+        x1="245"
+        y1="55"
+        x2="245"
+        y2="69"
+        stroke="var(--primary-line)"
+        stroke-width="0.6"
+        opacity="0.4"
+    />
+    <!-- Rubber feet -->
+    <g
+        stroke="var(--primary-line)"
+        fill="var(--primary-fill)"
+        stroke-width="1"
+        opacity="0.5"
+    >
+        <circle cx="65" cy="90" r="8" />
+        <circle cx="65" cy="90" r="4" fill="none" opacity="0.5" />
+        <circle cx="295" cy="90" r="8" />
+        <circle cx="295" cy="90" r="4" fill="none" opacity="0.5" />
+        <circle cx="65" cy="250" r="8" />
+        <circle cx="65" cy="250" r="4" fill="none" opacity="0.5" />
+        <circle cx="295" cy="250" r="8" />
+        <circle cx="295" cy="250" r="4" fill="none" opacity="0.5" />
+    </g>
+    <!-- Ventilation grills (left) -->
+    <g stroke="var(--primary-line)" stroke-width="0.7" opacity="0.3">
+        <rect x="38" y="200" width="12" height="42" rx="3" fill="none" />
+        <line x1="40" y1="206" x2="48" y2="206" />
+        <line x1="40" y1="212" x2="48" y2="212" />
+        <line x1="40" y1="218" x2="48" y2="218" />
+        <line x1="40" y1="224" x2="48" y2="224" />
+        <line x1="40" y1="230" x2="48" y2="230" />
+        <line x1="40" y1="236" x2="48" y2="236" />
+    </g>
+    <!-- Ventilation grills (right) -->
+    <g stroke="var(--primary-line)" stroke-width="0.7" opacity="0.3">
+        <rect x="310" y="200" width="12" height="42" rx="3" fill="none" />
+        <line x1="312" y1="206" x2="320" y2="206" />
+        <line x1="312" y1="212" x2="320" y2="212" />
+        <line x1="312" y1="218" x2="320" y2="218" />
+        <line x1="312" y1="224" x2="320" y2="224" />
+        <line x1="312" y1="230" x2="320" y2="230" />
+        <line x1="312" y1="236" x2="320" y2="236" />
+    </g>
+    <!-- screws -->
+    <g
+        stroke="var(--primary-line)"
+        stroke-width="0.5"
+        opacity="0.4"
+        fill="var(--canvas-bg)"
+    >
+        <circle cx="48" cy="80" r="3" />
+        <circle cx="312" cy="80" r="3" />
+        <circle cx="48" cy="260" r="3" />
+        <circle cx="312" cy="260" r="3" />
+    </g>
+</svg>
