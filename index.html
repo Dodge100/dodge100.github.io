@@ -28,7 +28,7 @@
             checked
         />
         <input type="radio" name="theme" id="theme-dark" class="bp-state" />
-        <input type="radio" name="theme" id="theme-amber" class="bp-state" />
+        <input type="radio" name="theme" id="theme-red" class="bp-state" />
         <input type="radio" name="theme" id="theme-military" class="bp-state" />
 
         <div class="theme-tray">
@@ -43,9 +43,9 @@
                 title="Cyber Slate"
             ></label>
             <label
-                for="theme-amber"
-                class="theme-dot theme-dot-amber"
-                title="CRT Amber"
+                for="theme-red"
+                class="theme-dot theme-dot-red"
+                title="CRT Red"
             ></label>
             <label
                 for="theme-military"
@@ -55,21 +55,13 @@
         </div>
 
         <div class="page">
-            <header class="mast">
-                <nav class="mast-nav">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </nav>
-            </header>
-
             <main>
                 <section class="hero hero-split">
                     <div class="hero-left">
                         <h1 class="hero-title">varun</h1>
                         <p class="hero-sub">
                             high school student interested in robotics and
-                            cybersecurity.
+                            systems development.
                         </p>
                     </div>
                     <div class="hero-right">
@@ -169,14 +161,42 @@
                     </div>
                 </section>
 
-                <section id="about" class="section-body">
+                <section class="bp-section">
+                    <div class="bp-controls">
+                        <label class="bp-checkbox-row">
+                            <input
+                                type="checkbox"
+                                id="explode-trigger"
+                                checked
+                            />
+                            <span>Explode Assembly</span>
+                        </label>
+                        <label class="bp-checkbox-row">
+                            <input type="checkbox" id="rotate-trigger" />
+                            <span>Camera Spin</span>
+                        </label>
+                    </div>
+                </section>
+
+                <section id="about">
                     <p>
-                        hi, i'm Varun, but you can usually find me as
+                        hi, i'm varun, but you can usually find me as
                         <strong>dodge1</strong> online.
                     </p>
                     <p>
                         i'm a high school student who likes trying new things
-                        and learning as much as i can about software.
+                        and learning as much as i can about software. recently
+                        i've been trying to expand my knowledge about both ai
+                        and cybersecurity.
+                    </p>
+                    <p>
+                        due to my exposure to robotics, i've been learning more
+                        about hardware. specifically, i got a chance to learn
+                        more about embedded systems and electrical engineering.
+                    </p>
+                    <p>
+                        feel free to reach out if you have anything cool to
+                        share or if you have any question!
                     </p>
                 </section>
 
@@ -224,13 +244,6 @@
                                         cool stuff i've made
                                     </p>
                                 </div>
-                                <p class="project-carousel-count">
-                                    <span data-current="1">01/05</span>
-                                    <span data-current="2">02/05</span>
-                                    <span data-current="3">03/05</span>
-                                    <span data-current="4">04/05</span>
-                                    <span data-current="5">05/05</span>
-                                </p>
                             </div>
 
                             <div class="project-carousel-screen">
@@ -245,7 +258,6 @@
                                         ></label>
                                         <div class="project-card-head">
                                             <h3>gas</h3>
-                                            <span>css preprocessor</span>
                                         </div>
                                         <p class="project-card-copy">
                                             CSS preprocessor adding
@@ -281,7 +293,6 @@
                                         ></label>
                                         <div class="project-card-head">
                                             <h3>neutron</h3>
-                                            <span>macos file manager</span>
                                         </div>
                                         <p class="project-card-copy">
                                             dual-pane macOS file manager built
@@ -319,7 +330,6 @@
                                         ></label>
                                         <div class="project-card-head">
                                             <h3>breadboard</h3>
-                                            <span>macos utility</span>
                                         </div>
                                         <p class="project-card-copy">
                                             macOS utility app designed to reduce
@@ -337,8 +347,11 @@
                                                 >native</span
                                             >
                                         </div>
-                                        <span class="project-card-action"
-                                            >open project</span
+                                        <a
+                                            class="project-card-action project-inline-action"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            >coming soon</a
                                         >
                                     </article>
 
@@ -352,7 +365,6 @@
                                         ></label>
                                         <div class="project-card-head">
                                             <h3>language</h3>
-                                            <span>interpreter in go</span>
                                         </div>
                                         <p class="project-card-copy">
                                             a simple lexer, interpreter, and
@@ -386,7 +398,6 @@
                                         ></label>
                                         <div class="project-card-head">
                                             <h3>playphone</h3>
-                                            <span>platformer game</span>
                                         </div>
                                         <p class="project-card-copy">
                                             my contribution to a Hackclub
@@ -437,7 +448,6 @@
                                 ></label>
                             </div>
                         </section>
-
                         <section class="panel-card projects-board">
                             <div class="projects-board-head">
                                 <div>
@@ -459,10 +469,9 @@
                                 >
                                     <div class="project-card-head">
                                         <h3>my site</h3>
-                                        <span>personal site</span>
                                     </div>
                                     <p class="project-card-copy">
-                                        source for this very site. meta.
+                                        source for this very site.
                                     </p>
                                     <div class="project-tag-row">
                                         <span class="project-tag">html</span>
@@ -480,7 +489,6 @@
                                 >
                                     <div class="project-card-head">
                                         <h3>mach one</h3>
-                                        <span>connect 4 engine</span>
                                     </div>
                                     <p class="project-card-copy">
                                         connect 4 engine built in 24h for a
@@ -502,7 +510,6 @@
                                 >
                                     <div class="project-card-head">
                                         <h3>chameleon</h3>
-                                        <span>ua switcher</span>
                                     </div>
                                     <p class="project-card-copy">
                                         ua switcher privacy extension ported to
@@ -543,22 +550,42 @@
                     </div>
                 </section>
 
-                <section class="bp-section">
-                    <div class="bp-controls">
-                        <label class="bp-checkbox-row">
-                            <input
-                                type="checkbox"
-                                id="explode-trigger"
-                                checked
-                            />
-                            <span>Explode Assembly</span>
-                        </label>
-                        <label class="bp-checkbox-row">
-                            <input type="checkbox" id="rotate-trigger" />
-                            <span>Camera Spin</span>
-                        </label>
+                <footer id="contact">
+                    <h2 class="contact-heading">get in touch</h2>
+
+                    <div class="contact-methods">
+                        <div class="contact-row">
+                            <span class="contact-label">email</span>
+                            <a
+                                href="mailto:varun@dodge1.dev"
+                                class="contact-val"
+                                >varun@dodge1.dev</a
+                            >
+                        </div>
+                        <div class="contact-row">
+                            <span class="contact-label">github</span>
+                            <a
+                                href="https://github.com/Dodge100"
+                                target="_blank"
+                                rel="noreferrer"
+                                class="contact-val"
+                                >Dodge100</a
+                            >
+                        </div>
+                        <div class="contact-row">
+                            <span class="contact-label">discord</span>
+                            <span class="contact-val contact-val--text"
+                                >dodge1</span
+                            >
+                        </div>
                     </div>
-                </section>
+
+                    <a
+                        onclick="javascript: alert('coming soon');"
+                        class="contact-resume"
+                        >download resume</a
+                    >
+                </footer>
             </main>
         </div>
     </body>
