@@ -8,7 +8,7 @@
         x="25"
         y="55"
         width="310"
-        height="250"
+        height="230"
         rx="14"
         fill="var(--primary-fill)"
         stroke="var(--primary-line)"
@@ -137,7 +137,7 @@
     <!-- trackpad -->
     <rect
         x="100"
-        y="210"
+        y="197"
         width="160"
         height="85"
         rx="6"
@@ -147,7 +147,7 @@
     />
     <rect
         x="105"
-        y="215"
+        y="202"
         width="150"
         height="75"
         rx="4"
