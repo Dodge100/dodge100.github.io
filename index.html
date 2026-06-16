@@ -4,7 +4,16 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="dodge1" />
-        <meta name="theme-color" content="#0a0a0f" />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: light)"
+            content="#f8fafc"
+        />
+        <meta
+            name="theme-color"
+            media="(prefers-color-scheme: dark)"
+            content="#0f172a"
+        />
         <title>dodge1</title>
         <meta
             name="description"
@@ -25,7 +34,6 @@
             name="theme"
             id="theme-blueprint"
             class="bp-state"
-            checked
         />
         <input type="radio" name="theme" id="theme-dark" class="bp-state" />
         <input type="radio" name="theme" id="theme-red" class="bp-state" />
@@ -248,30 +256,38 @@
                                         <div class="project-card-body">
                                             <div class="project-card-head">
                                                 <h3>gas</h3>
+                                                <div
+                                                    class="project-card-actions"
+                                                >
+                                                    <a
+                                                        class="project-card-action project-inline-action project-inline-icon icon-github"
+                                                        href="https://github.com/Dodge100/gas"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        aria-label="View source on GitHub"
+                                                    ></a>
+                                                </div>
                                             </div>
                                             <p class="project-card-copy">
-                                                CSS preprocessor adding
-                                                tailwind-style class parameters,
-                                                mixins, and QOL features for
-                                                faster styling.
+                                                CSS preprocessor written in
+                                                javascript allowing for adding
+                                                tailwind-style class parameters
+                                                and mixins directly into .gas
+                                                files and then dynamically
+                                                creating css files based on your
+                                                html. aims to keep css as it is
+                                                while improving quality of life.
                                             </p>
-                                            <a
-                                                class="project-card-action project-inline-action project-inline-icon icon-github"
-                                                href="https://github.com/Dodge100/gas"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                aria-label="View source on GitHub"
-                                            ></a>
                                         </div>
                                         <div class="project-tech-section">
-                                            <span class="project-tech-chip"
-                                                >css</span
+                                            <span class="project-tech-label"
+                                                >tech used</span
                                             >
-                                            <span class="project-tech-chip"
-                                                >tooling</span
+                                            <span class="project-tag"
+                                                >javascript</span
                                             >
-                                            <span class="project-tech-chip"
-                                                >preprocessor</span
+                                            <span class="project-tag"
+                                                >css preprocessor</span
                                             >
                                         </div>
                                     </article>
@@ -287,30 +303,40 @@
                                         <div class="project-card-body">
                                             <div class="project-card-head">
                                                 <h3>neutron</h3>
+                                                <div
+                                                    class="project-card-actions"
+                                                >
+                                                    <a
+                                                        class="project-card-action project-inline-action project-inline-icon icon-github"
+                                                        href="https://github.com/Dodge100/neutron"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        aria-label="View source on GitHub"
+                                                    ></a>
+                                                </div>
                                             </div>
                                             <p class="project-card-copy">
-                                                dual-pane macOS file manager
-                                                built in Swift. provides native
-                                                performance like finder with
-                                                more features.
+                                                dual-pane based file manager for
+                                                MacOS built in Swift. acts as a
+                                                full finder replacement while
+                                                adding more features like a
+                                                command pallete, better
+                                                integration of file paths, and
+                                                support for cloud storage.
                                             </p>
-                                            <a
-                                                class="project-card-action project-inline-action project-inline-icon icon-github"
-                                                href="https://github.com/Dodge100/neutron"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                aria-label="View source on GitHub"
-                                            ></a>
                                         </div>
                                         <div class="project-tech-section">
-                                            <span class="project-tech-chip"
+                                            <span class="project-tech-label"
+                                                >tech used</span
+                                            >
+                                            <span class="project-tag"
                                                 >swift</span
                                             >
-                                            <span class="project-tech-chip"
-                                                >macos</span
+                                            <span class="project-tag"
+                                                >cloud</span
                                             >
-                                            <span class="project-tech-chip"
-                                                >native</span
+                                            <span class="project-tag"
+                                                >macOS</span
                                             >
                                         </div>
                                     </article>
@@ -326,27 +352,41 @@
                                         <div class="project-card-body">
                                             <div class="project-card-head">
                                                 <h3>breadboard</h3>
+                                                <div
+                                                    class="project-card-actions"
+                                                >
+                                                    <a
+                                                        class="project-card-action project-inline-action coming-soon"
+                                                        aria-label="coming soon"
+                                                        >coming soon</a
+                                                    >
+                                                </div>
                                             </div>
                                             <p class="project-card-copy">
                                                 macOS utility app designed to
-                                                reduce performance overhead
-                                                while providing more features.
+                                                replace every other daemon app
+                                                by adding tools like keyboard
+                                                remapping with modal support,
+                                                custom shortcuts & triggers,
+                                                menubar support, and widget
+                                                integrations.
                                             </p>
-                                            <a
-                                                class="project-card-action project-inline-action coming-soon"
-                                                aria-label="coming soon"
-                                                >coming soon</a
-                                            >
                                         </div>
                                         <div class="project-tech-section">
-                                            <span class="project-tech-chip"
-                                                >macos</span
+                                            <span class="project-tech-label"
+                                                >tech used</span
                                             >
-                                            <span class="project-tech-chip"
+                                            <span class="project-tag"
+                                                >swift</span
+                                            >
+                                            <span class="project-tag"
+                                                >daemon</span
+                                            >
+                                            <span class="project-tag"
                                                 >utility</span
                                             >
-                                            <span class="project-tech-chip"
-                                                >native</span
+                                            <span class="project-tag"
+                                                >macOS</span
                                             >
                                         </div>
                                     </article>
@@ -362,28 +402,37 @@
                                         <div class="project-card-body">
                                             <div class="project-card-head">
                                                 <h3>language</h3>
+                                                <div
+                                                    class="project-card-actions"
+                                                >
+                                                    <a
+                                                        class="project-card-action project-inline-action project-inline-icon icon-github"
+                                                        href="https://github.com/Dodge100/language"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        aria-label="View source on GitHub"
+                                                    ></a>
+                                                </div>
                                             </div>
                                             <p class="project-card-copy">
-                                                a simple lexer, interpreter, and
-                                                parser written in Go
+                                                lexer, interpreter, and parser
+                                                written in Go supporting python
+                                                like-syntax with an emphasis on
+                                                type safety and easy of use.
+                                                took inspiration from langauges
+                                                like python and c++ for syntax
+                                                to decrease developer friction.
                                             </p>
-                                            <a
-                                                class="project-card-action project-inline-action project-inline-icon icon-github"
-                                                href="https://github.com/Dodge100/language"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                aria-label="View source on GitHub"
-                                            ></a>
                                         </div>
                                         <div class="project-tech-section">
-                                            <span class="project-tech-chip"
-                                                >go</span
+                                            <span class="project-tech-label"
+                                                >tech used</span
                                             >
-                                            <span class="project-tech-chip"
-                                                >compiler</span
+                                            <span class="project-tag"
+                                                >golang</span
                                             >
-                                            <span class="project-tech-chip"
-                                                >learning</span
+                                            <span class="project-tag"
+                                                >low level</span
                                             >
                                         </div>
                                     </article>
@@ -399,29 +448,44 @@
                                         <div class="project-card-body">
                                             <div class="project-card-head">
                                                 <h3>playphone</h3>
+                                                <div
+                                                    class="project-card-actions"
+                                                >
+                                                    <a
+                                                        class="project-card-action project-inline-action project-inline-icon icon-github"
+                                                        href="https://dodge100.itch.io/playphone"
+                                                        target="_blank"
+                                                        rel="noreferrer"
+                                                        aria-label="View project on itch.io"
+                                                    ></a>
+                                                </div>
                                             </div>
                                             <p class="project-card-copy">
-                                                my contribution to a Hackclub
-                                                pass-the-game style challenge.
+                                                my contribution for week 4 of a
+                                                pass-the-game style challenge
+                                                organized by hackclub. mainly
+                                                involved level design as well as
+                                                balancing mechanics and creating
+                                                interesting gameplay.
                                             </p>
-                                            <a
-                                                class="project-card-action project-inline-action project-inline-icon icon-github"
-                                                href="https://dodge100.itch.io/playphone"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                aria-label="View project on itch.io"
-                                            ></a>
                                         </div>
                                         <div class="project-tech-section">
-                                            <span class="project-tech-chip"
-                                                >game</span
+                                            <span class="project-tech-label"
+                                                >tech used</span
                                             >
-                                            <span class="project-tech-chip"
-                                                >hackclub</span
-                                            >
-                                            <span class="project-tech-chip"
+                                            <span class="project-tag"
                                                 >godot</span
                                             >
+                                            <span class="project-tag"
+                                                >hackclub</span
+                                            >
+                                            <span class="project-tag"
+                                                >gamedev</span
+                                            >
+                                            <span class="project-tag"
+                                                >collaborative</span
+                                            >
+                                            <span class="project-tag">web</span>
                                         </div>
                                     </article>
                                 </div>
@@ -469,19 +533,32 @@
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    <div class="project-card-head">
-                                        <h3>my site</h3>
+                                    <div class="project-card-body">
+                                        <div class="project-card-head">
+                                            <h3>my site</h3>
+                                            <div class="project-card-actions">
+                                                <span
+                                                    class="project-card-action project-inline-icon icon-github"
+                                                    aria-label="View source on GitHub"
+                                                ></span>
+                                            </div>
+                                        </div>
+                                        <p class="project-card-copy">
+                                            source code for this site. no
+                                            javascript was used to try to use
+                                            css for interactivity where
+                                            javascript would typically be used.
+                                            this includes stuff like the hero
+                                            and carousel which don't use any
+                                            javascript.
+                                        </p>
+                                        <div class="project-tag-row">
+                                            <span class="project-tag"
+                                                >html</span
+                                            >
+                                            <span class="project-tag">css</span>
+                                        </div>
                                     </div>
-                                    <p class="project-card-copy">
-                                        source for this very site.
-                                    </p>
-                                    <div class="project-tag-row">
-                                        <span class="project-tag">html</span>
-                                        <span class="project-tag">css</span>
-                                    </div>
-                                    <span class="project-card-action"
-                                        >open project</span
-                                    >
                                 </a>
                                 <a
                                     class="project-card"
@@ -489,20 +566,35 @@
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    <div class="project-card-head">
-                                        <h3>mach one</h3>
+                                    <div class="project-card-body">
+                                        <div class="project-card-head">
+                                            <h3>mach one</h3>
+                                            <div class="project-card-actions">
+                                                <span
+                                                    class="project-card-action project-inline-icon icon-github"
+                                                    aria-label="View source on GitHub"
+                                                ></span>
+                                            </div>
+                                        </div>
+                                        <p class="project-card-copy">
+                                            complete interface system allowing
+                                            for unified communication of
+                                            implementations of connect 4
+                                            engines. while a parallel minimax
+                                            search was used, the interface
+                                            allows you to instead build your own
+                                            engine and serve it to the user.
+                                        </p>
+                                        <div class="project-tag-row">
+                                            <span class="project-tag"
+                                                >gamedev</span
+                                            >
+                                            <span class="project-tag"
+                                                >algorithm</span
+                                            >
+                                            <span class="project-tag">ai</span>
+                                        </div>
                                     </div>
-                                    <p class="project-card-copy">
-                                        connect 4 engine built in 24h for a
-                                        hackathon
-                                    </p>
-                                    <div class="project-tag-row">
-                                        <span class="project-tag">game</span>
-                                        <span class="project-tag">ai</span>
-                                    </div>
-                                    <span class="project-card-action"
-                                        >open project</span
-                                    >
                                 </a>
                                 <a
                                     class="project-card"
@@ -510,22 +602,29 @@
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    <div class="project-card-head">
-                                        <h3>chameleon</h3>
+                                    <div class="project-card-body">
+                                        <div class="project-card-head">
+                                            <h3>chameleon</h3>
+                                            <div class="project-card-actions">
+                                                <span
+                                                    class="project-card-action project-inline-icon icon-github"
+                                                    aria-label="View source on GitHub"
+                                                ></span>
+                                            </div>
+                                        </div>
+                                        <p class="project-card-copy">
+                                            a port of the firefox extension by
+                                            sereneblue to chromium browsers. it
+                                            currently mainly supports user agent
+                                            switching with other features in the
+                                            works.
+                                        </p>
+                                        <div class="project-tag-row">
+                                            <span class="project-tag"
+                                                >chrome extension</span
+                                            >
+                                        </div>
                                     </div>
-                                    <p class="project-card-copy">
-                                        ua switcher privacy extension ported to
-                                        chromium
-                                    </p>
-                                    <div class="project-tag-row">
-                                        <span class="project-tag">privacy</span>
-                                        <span class="project-tag"
-                                            >extension</span
-                                        >
-                                    </div>
-                                    <span class="project-card-action"
-                                        >open project</span
-                                    >
                                 </a>
                                 <a
                                     class="project-card"
@@ -533,19 +632,33 @@
                                     target="_blank"
                                     rel="noreferrer"
                                 >
-                                    <div class="project-card-head">
-                                        <h3>retro revival</h3>
+                                    <div class="project-card-body">
+                                        <div class="project-card-head">
+                                            <h3>retro revival</h3>
+                                            <div class="project-card-actions">
+                                                <span
+                                                    class="project-card-action project-inline-icon icon-github"
+                                                    aria-label="View source on GitHub"
+                                                ></span>
+                                            </div>
+                                        </div>
+                                        <p class="project-card-copy">
+                                            a retro styled platformer built in
+                                            godot. all art was done using
+                                            aseprite with an 8x style.
+                                        </p>
+                                        <div class="project-tag-row">
+                                            <span class="project-tag"
+                                                >gamedev</span
+                                            >
+                                            <span class="project-tag"
+                                                >godot</span
+                                            >
+                                            <span class="project-tag"
+                                                >aseprite</span
+                                            >
+                                        </div>
                                     </div>
-                                    <p class="project-card-copy">
-                                        retro platformer built in godot
-                                    </p>
-                                    <div class="project-tag-row">
-                                        <span class="project-tag">godot</span>
-                                        <span class="project-tag">gamedev</span>
-                                    </div>
-                                    <span class="project-card-action"
-                                        >open project</span
-                                    >
                                 </a>
                             </div>
                         </section>
@@ -559,9 +672,9 @@
                         <div class="contact-row">
                             <span class="contact-label">email</span>
                             <a
-                                href="mailto:varun@dodge1.dev"
+                                href="mailto:varung2235@gmail.com"
                                 class="contact-val"
-                                >varun@dodge1.dev</a
+                                >varung2235@gmail.com</a
                             >
                         </div>
                         <div class="contact-row">
@@ -577,16 +690,17 @@
                         <div class="contact-row">
                             <span class="contact-label">discord</span>
                             <span class="contact-val contact-val--text"
-                                >dodge1</span
+                                >germancoastguard</span
                             >
                         </div>
                     </div>
 
-                    <a
+                    <button
                         onclick="javascript: alert('coming soon');"
                         class="contact-resume"
-                        >download resume</a
                     >
+                        download resume
+                    </button>
                 </footer>
             </main>
         </div>
