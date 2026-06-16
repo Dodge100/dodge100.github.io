@@ -1,4 +1,4 @@
-/* ─── HERO ─── */
+/* hero */
 .hero {
     min-height: 90vh;
     display: flex;
@@ -25,7 +25,7 @@
     line-height: 1.55;
 }
 
-/* ─── HERO SPLIT LAYOUT ─── */
+/* hero split */
 .hero-split {
     display: flex;
     flex-direction: row;
@@ -63,7 +63,7 @@
     }
 }
 
-/* ─── 3D SCENE ─── */
+/* laptop */
 .bp-scene {
     position: relative;
     width: 0;
