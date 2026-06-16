@@ -1,0 +1,175 @@
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    id="root"
+    viewBox="0 0 360 360"
+    fill="none"
+>
+    <!-- Heatsink baseplate over CPU -->
+    <rect
+        x="68"
+        y="103"
+        width="120"
+        height="110"
+        rx="4"
+        fill="var(--primary-fill)"
+        stroke="var(--primary-line)"
+        stroke-width="1.5"
+    />
+    <!-- Thermal paste area (matches CPU outline) -->
+    <rect
+        x="83"
+        y="113"
+        width="89"
+        height="89"
+        rx="2"
+        fill="var(--canvas-bg)"
+        stroke="var(--primary-line)"
+        stroke-width="0.5"
+        opacity="0.4"
+    />
+    <!-- Heatsink mounting screws -->
+    <g
+        fill="var(--canvas-bg)"
+        stroke="var(--primary-line)"
+        stroke-width="0.4"
+    >
+        <circle cx="75" cy="110" r="4" />
+        <circle cx="181" cy="110" r="4" />
+        <circle cx="75" cy="206" r="4" />
+        <circle cx="181" cy="206" r="4" />
+    </g>
+    <!-- Heatsink fins -->
+    <g stroke="var(--primary-line)" stroke-width="0.4" opacity="0.5">
+        <line x1="73" y1="107" x2="73" y2="209" />
+        <line x1="79" y1="107" x2="79" y2="209" />
+        <line x1="85" y1="107" x2="85" y2="209" />
+        <line x1="91" y1="107" x2="91" y2="209" />
+        <line x1="97" y1="107" x2="97" y2="209" />
+        <line x1="103" y1="107" x2="103" y2="209" />
+        <line x1="109" y1="107" x2="109" y2="209" />
+        <line x1="115" y1="107" x2="115" y2="209" />
+        <line x1="121" y1="107" x2="121" y2="209" />
+        <line x1="127" y1="107" x2="127" y2="209" />
+        <line x1="133" y1="107" x2="133" y2="209" />
+        <line x1="139" y1="107" x2="139" y2="209" />
+        <line x1="145" y1="107" x2="145" y2="209" />
+        <line x1="151" y1="107" x2="151" y2="209" />
+        <line x1="157" y1="107" x2="157" y2="209" />
+        <line x1="163" y1="107" x2="163" y2="209" />
+        <line x1="169" y1="107" x2="169" y2="209" />
+        <line x1="175" y1="107" x2="175" y2="209" />
+        <line x1="181" y1="107" x2="181" y2="209" />
+    </g>
+    <!-- Flat heat pipe 1 (upper) -->
+    <path
+        d="M 138 108 Q 185 100, 240 85"
+        stroke="var(--primary-line)"
+        stroke-width="15"
+        stroke-linecap="round"
+        fill="none"
+        opacity="0.8"
+    />
+    <path
+        d="M 138 108 Q 185 100, 240 85"
+        stroke="var(--primary-fill)"
+        stroke-width="13"
+        stroke-linecap="round"
+        fill="none"
+    />
+    <path
+        d="M 138 108 Q 185 100, 240 85"
+        stroke="var(--canvas-bg)"
+        stroke-width="3"
+        stroke-linecap="round"
+        fill="none"
+        opacity="0.15"
+    />
+    <!-- Flat heat pipe 2 (lower) -->
+    <path
+        d="M 165 180 Q 200 155, 245 125"
+        stroke="var(--primary-line)"
+        stroke-width="15"
+        stroke-linecap="round"
+        fill="none"
+        opacity="0.8"
+    />
+    <path
+        d="M 165 180 Q 200 155, 245 125"
+        stroke="var(--primary-fill)"
+        stroke-width="13"
+        stroke-linecap="round"
+        fill="none"
+    />
+    <path
+        d="M 165 180 Q 200 155, 245 125"
+        stroke="var(--canvas-bg)"
+        stroke-width="3"
+        stroke-linecap="round"
+        fill="none"
+        opacity="0.15"
+    />
+    <!-- Fan housing -->
+    <rect
+        x="240"
+        y="60"
+        width="90"
+        height="90"
+        rx="12"
+        fill="var(--primary-fill)"
+        stroke="var(--primary-line)"
+        stroke-width="1.5"
+    />
+    <!-- Fan intake circle -->
+    <circle
+        cx="285"
+        cy="105"
+        r="34"
+        fill="var(--canvas-bg)"
+        stroke="var(--primary-line)"
+        stroke-width="1"
+    />
+    <!-- Fan bracket lines -->
+    <g stroke="var(--primary-line)" stroke-width="0.5" opacity="0.3">
+        <line x1="285" y1="78" x2="285" y2="132" />
+        <line x1="258" y1="105" x2="312" y2="105" />
+        <line x1="266" y1="86" x2="304" y2="124" />
+        <line x1="266" y1="124" x2="304" y2="86" />
+    </g>
+    <!-- Fan hub -->
+    <circle
+        cx="285"
+        cy="105"
+        r="12"
+        fill="var(--primary-fill)"
+        stroke="var(--primary-line)"
+        stroke-width="0.8"
+    />
+    <circle
+        cx="285"
+        cy="105"
+        r="6"
+        fill="var(--canvas-bg)"
+        stroke="var(--primary-line)"
+        stroke-width="0.5"
+    />
+    <circle
+        cx="285"
+        cy="105"
+        r="2"
+        fill="var(--primary-fill-solid)"
+        stroke="var(--primary-line)"
+        stroke-width="0.4"
+    />
+    <!-- Fan frame screws -->
+    <g
+        fill="var(--canvas-bg)"
+        stroke="var(--primary-line)"
+        stroke-width="0.4"
+        opacity="0.5"
+    >
+        <circle cx="257" cy="74" r="3" />
+        <circle cx="313" cy="74" r="3" />
+        <circle cx="257" cy="136" r="3" />
+        <circle cx="313" cy="136" r="3" />
+    </g>
+</svg>

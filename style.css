@@ -4,6 +4,8 @@
     --font-body: "Newsreader", Georgia, serif;
     --font-heading: "Instrument Sans", system-ui, sans-serif;
     --ease-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    /* embedded icon data URIs (uses currentColor for tinting) */
+    --icon-github: url("data:image/svg+xml;charset=utf-8,%3Csvg%20viewBox%3D%220%200%201024%201024%22%20xmlns%3D%22http://www.w3.org/2000/svg%22%3E%3Cpath%20fill%3D%22currentColor%22%20fill-rule%3D%22evenodd%22%20d%3D%22M512%200C229.12%200%200%20229.12%200%20512c0%20226.56%20146.56%20417.92%20350.08%20485.76%2025.6%204.48%2035.2-10.88%2035.2-24.32%200-12.16-.64-52.48-.64-95.36-128.64%2023.68-161.92-31.36-172.16-60.16-5.76-14.72-30.72-60.16-52.48-72.32-17.92-9.6-43.52-33.28-.64-33.92%2040.32-.64%2069.12%2037.12%2078.72%2052.48%2046.08%2077.44%20119.68%2055.68%20149.12%2042.24%204.48-33.28%2017.92-55.68%2032.64-68.48-113.92-12.8-232.96-56.96-232.96-252.8%200-55.68%2019.84-101.76%2052.48-137.6-5.12-12.8-23.04-65.28%205.12-135.68%200%200%2042.88-13.44%20140.8%2052.48%2040.96-11.52%2084.48-17.28%20128-17.28s87.04%205.76%20128%2017.28c97.92-66.56%20140.8-52.48%20140.8-52.48%2028.16%2070.4%2010.24%20122.88%205.12%20135.68%2032.64%2035.84%2052.48%2081.28%2052.48%20137.6%200%20196.48-119.68%20240-233.6%20252.8%2018.56%2016%2034.56%2046.72%2034.56%2094.72%200%2068.48-.64%20123.52-.64%20140.8%200%2013.44%209.6%2029.44%2035.2%2024.32C877.44%20929.92%201024%20737.92%201024%20512%201024%20229.12%20794.88%200%20512%200%22%20clip-rule%3D%22evenodd%22/%3E%3C/svg%3E");
 }
 
 body:has(#theme-blueprint:checked) {
@@ -277,38 +279,106 @@ section[id] {
 .project-carousel-screen {
     position: relative;
     overflow: hidden;
-    padding: 8px 0 14px;
+    padding: 8px 0 56px;
 }
 
 .project-carousel-slides {
     position: relative;
-    min-height: 292px;
-    perspective: 1200px;
+    min-height: 440px;
 }
 
 .project-carousel-slide {
     position: absolute;
-    top: 10px;
-    bottom: 10px;
+    top: 24px;
+    bottom: 24px;
     left: 50%;
-    width: min(100%, 48%);
-    display: grid;
-    gap: 12px;
-    padding: 18px;
-    border: 4px solid var(--ui-border);
+    width: min(100%, 56%);
+    padding: 24px;
+    border: 2px solid var(--ui-border);
     background: var(--ui-bg);
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.12);
     opacity: 0;
-    transform: translateX(-50%) scale(0.8);
-    transform-origin: center center;
+    transform: translateX(-50%) scale(0.85);
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    transition:
+        opacity 320ms ease,
+        transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-radius 0.35s ease;
+}
+
+.project-card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* ─── TECH SECTION (tucked under the card, revealed on hover) ─── */
+.project-tech-section {
+    position: absolute;
+    top: calc(100% - 8px);
+    left: 0;
+    right: 0;
+    background: var(--primary-fill);
+    border: 1px solid color-mix(in srgb, var(--primary-line) 18%, transparent);
+    border-top: 0;
+    border-radius: 12px;
+    padding: 10px 20px 12px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(-6px);
     pointer-events: none;
     transition:
-        opacity var(--motion-base) ease,
-        transform var(--motion-base) var(--motion-ease),
-        filter var(--motion-base) ease,
-        border-color var(--motion-fast) ease,
-        box-shadow var(--motion-fast) ease,
-        background-color var(--motion-fast) ease;
+        opacity 0.3s ease,
+        transform 0.35s ease;
+}
+
+.project-tech-chip {
+    padding: 4px 10px;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--primary-line) 14%, transparent);
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--primary-line);
+    line-height: 1.2;
+    white-space: nowrap;
+}
+
+/* Tech section revealed on hover */
+.project-carousel-slide:hover .project-tech-section {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ─── CAROUSEL HOVER EFFECTS ─── */
+/* Slide (card) itself lifts up — overrides each carousel position */
+#projects:has(#proj-1:checked) .project-carousel-slide[data-index="0"]:hover,
+#projects:has(#proj-2:checked) .project-carousel-slide[data-index="1"]:hover,
+#projects:has(#proj-3:checked) .project-carousel-slide[data-index="2"]:hover,
+#projects:has(#proj-4:checked) .project-carousel-slide[data-index="3"]:hover,
+#projects:has(#proj-5:checked) .project-carousel-slide[data-index="4"]:hover {
+    transform: translateX(-50%) translateY(-24px) scale(1) !important;
+}
+#projects:has(#proj-1:checked) .project-carousel-slide[data-index="4"]:hover,
+#projects:has(#proj-2:checked) .project-carousel-slide[data-index="0"]:hover,
+#projects:has(#proj-3:checked) .project-carousel-slide[data-index="1"]:hover,
+#projects:has(#proj-4:checked) .project-carousel-slide[data-index="2"]:hover,
+#projects:has(#proj-5:checked) .project-carousel-slide[data-index="3"]:hover {
+    transform: translateX(-125%) translateY(-24px) scale(0.82) !important;
+}
+#projects:has(#proj-1:checked) .project-carousel-slide[data-index="1"]:hover,
+#projects:has(#proj-2:checked) .project-carousel-slide[data-index="2"]:hover,
+#projects:has(#proj-3:checked) .project-carousel-slide[data-index="3"]:hover,
+#projects:has(#proj-4:checked) .project-carousel-slide[data-index="4"]:hover,
+#projects:has(#proj-5:checked) .project-carousel-slide[data-index="0"]:hover {
+    transform: translateX(25%) translateY(-24px) scale(0.82) !important;
+}
+
+/* action link sits naturally after copy in carousel */
+.project-carousel-slide .project-card-action {
+    margin-top: 0;
 }
 
 .slide-click-target {
@@ -318,7 +388,8 @@ section[id] {
     cursor: pointer;
 }
 
-/* ─── MANUAL OVERRIDE ─── */
+/* ─── CAROUSEL STATE OVERRIDES ─── */
+/* Active */
 #projects:has(#proj-1:checked) .project-carousel-slide[data-index="0"],
 #projects:has(#proj-2:checked) .project-carousel-slide[data-index="1"],
 #projects:has(#proj-3:checked) .project-carousel-slide[data-index="2"],
@@ -326,37 +397,35 @@ section[id] {
 #projects:has(#proj-5:checked) .project-carousel-slide[data-index="4"] {
     opacity: 1 !important;
     transform: translateX(-50%) scale(1) !important;
-    border-color: var(--primary-line) !important;
-    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.14) !important;
     z-index: 3 !important;
     pointer-events: auto !important;
-    filter: none !important;
 }
 
+/* Left adjacent */
 #projects:has(#proj-1:checked) .project-carousel-slide[data-index="4"],
 #projects:has(#proj-2:checked) .project-carousel-slide[data-index="0"],
 #projects:has(#proj-3:checked) .project-carousel-slide[data-index="1"],
 #projects:has(#proj-4:checked) .project-carousel-slide[data-index="2"],
 #projects:has(#proj-5:checked) .project-carousel-slide[data-index="3"] {
-    opacity: 0.7 !important;
-    transform: translateX(-122%) scale(0.82) rotateY(10deg) !important;
-    filter: saturate(0.72) brightness(0.9) !important;
+    opacity: 0.5 !important;
+    transform: translateX(-125%) scale(0.82) !important;
     z-index: 2 !important;
     pointer-events: auto !important;
 }
 
+/* Right adjacent */
 #projects:has(#proj-1:checked) .project-carousel-slide[data-index="1"],
 #projects:has(#proj-2:checked) .project-carousel-slide[data-index="2"],
 #projects:has(#proj-3:checked) .project-carousel-slide[data-index="3"],
 #projects:has(#proj-4:checked) .project-carousel-slide[data-index="4"],
 #projects:has(#proj-5:checked) .project-carousel-slide[data-index="0"] {
-    opacity: 0.7 !important;
-    transform: translateX(22%) scale(0.82) rotateY(-10deg) !important;
-    filter: saturate(0.72) brightness(0.9) !important;
+    opacity: 0.5 !important;
+    transform: translateX(25%) scale(0.82) !important;
     z-index: 2 !important;
     pointer-events: auto !important;
 }
 
+/* Hidden */
 #projects:has(#proj-1:checked) .project-carousel-slide[data-index="2"],
 #projects:has(#proj-1:checked) .project-carousel-slide[data-index="3"],
 #projects:has(#proj-2:checked) .project-carousel-slide[data-index="3"],
@@ -368,11 +437,12 @@ section[id] {
 #projects:has(#proj-5:checked) .project-carousel-slide[data-index="1"],
 #projects:has(#proj-5:checked) .project-carousel-slide[data-index="2"] {
     opacity: 0 !important;
-    transform: translateX(-50%) scale(0.8) !important;
+    transform: translateX(-50%) scale(0.82) !important;
     z-index: 1 !important;
     pointer-events: none !important;
 }
 
+/* ─── CARD CONTENT ─── */
 .project-card-head {
     display: flex;
     justify-content: space-between;
@@ -390,8 +460,10 @@ section[id] {
 .project-card-head h3 {
     margin: 0;
     font-family: var(--font-heading);
-    font-size: 1rem;
-    line-height: 1.2;
+    font-size: 1.15rem;
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
 }
 
 .project-card-head span {
@@ -404,24 +476,29 @@ section[id] {
 .project-tag-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 5px;
+    gap: 6px;
 }
 
 .project-tag {
     display: inline-flex;
     align-items: center;
-    padding: 2px 6px;
+    padding: 3px 8px;
     background: var(--primary-fill);
-    line-height: 1.2;
+    line-height: 1.3;
     text-transform: lowercase;
-    opacity: 0.9;
+    opacity: 0.92;
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    border: 1px solid color-mix(in srgb, var(--primary-line) 20%, transparent);
+    color: var(--primary-line);
 }
 
+/* ─── SHARED ACTION TEXT ─── */
 .project-card-action {
     margin-top: auto;
     color: var(--text-accent);
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     text-transform: lowercase;
     text-decoration: none;
     position: relative;
@@ -430,38 +507,48 @@ section[id] {
 }
 
 .project-card-action::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
     bottom: -1px;
     height: 1px;
     background: var(--text-accent);
+    transform: scaleX(0);
+    transform-origin: left;
     transition:
-        transform 0.3s var(--ease-out),
+        transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
         background-color 0.25s ease;
 }
 
-.project-inline-action {
-    display: inline-grid;
-    place-items: center;
-    justify-self: start;
-    min-height: 40px;
-    padding: 8px 16px 6px;
-    border: 2px solid var(--ui-border);
-    background: var(--ui-bg);
-    cursor: pointer;
-    font: inherit;
-    transition:
-        transform var(--motion-base) var(--motion-ease),
-        border-color var(--motion-fast) ease,
-        background-color var(--motion-fast) ease,
-        color var(--motion-fast) ease;
+.project-card-action:hover::after {
+    transform: scaleX(1);
 }
 
-.project-inline-action:hover,
-.project-inline-action:focus-visible {
-    transform: translateY(-2px);
-    border-color: var(--primary-line);
-    background: var(--primary-fill);
+/* kill underline on carousel icon buttons */
+.project-inline-icon::after,
+.coming-soon::after {
+    content: none !important;
 }
 
+/* minimal github icon (uses mask for reliable accent-color tinting) */
+.project-inline-icon {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 0;
+    background-color: var(--text-accent);
+    mask: var(--icon) center / 24px no-repeat;
+    -webkit-mask: var(--icon) center / 24px no-repeat;
+}
+
+.project-inline-icon.icon-github {
+    --icon: var(--icon-github);
+}
+
+/* ─── NAVIGATION DOTS ─── */
 .testimonial-dots {
     display: flex;
     justify-content: center;
@@ -470,31 +557,19 @@ section[id] {
 
 .testimonial-dot {
     appearance: none;
-    width: 16px;
-    height: 16px;
-    padding: 0;
+    width: 14px;
+    height: 14px;
     border: 2px solid var(--ui-border);
     border-radius: 50%;
     background: var(--ui-bg);
     cursor: pointer;
     transition:
-        transform var(--motion-base) var(--motion-ease),
-        background-color var(--motion-fast) ease,
-        border-color var(--motion-fast) ease;
-    position: relative;
+        background-color 0.2s ease,
+        border-color 0.2s ease;
 }
 
-.testimonial-dot::after {
-    content: "";
-    position: absolute;
-    inset: -5px;
-    border-radius: 50%;
-}
-
-.testimonial-dot:hover,
-.testimonial-dot:focus-visible {
+.testimonial-dot:hover {
     border-color: var(--primary-line);
-    background: var(--primary-fill);
 }
 
 #projects:has(#proj-1:checked) .testimonial-dots [for="proj-1"],
@@ -504,10 +579,9 @@ section[id] {
 #projects:has(#proj-5:checked) .testimonial-dots [for="proj-5"] {
     background: var(--primary-line) !important;
     border-color: var(--primary-line) !important;
-    transform: translateY(-2px) !important;
 }
 
-/* ─── PAST WORK GRID ─── */
+/* ─── GRID CARDS ─── */
 .projects-board {
     display: grid;
     gap: 16px;
@@ -515,7 +589,7 @@ section[id] {
 
 .project-grid {
     columns: 3;
-    column-gap: 12px;
+    column-gap: 14px;
 }
 
 .project-card {
@@ -523,9 +597,10 @@ section[id] {
     gap: 10px;
     min-height: 0;
     break-inside: avoid;
-    margin-bottom: 12px;
-    padding: 14px;
-    border: 3px solid var(--ui-border);
+    margin-bottom: 14px;
+    padding: 16px 16px 14px;
+    border: 2px solid var(--ui-border);
+    border-top: 3px solid color-mix(in srgb, var(--primary-line) 25%, var(--ui-bg) 75%);
     background: var(--ui-bg);
     color: var(--text-primary);
     text-align: left;
@@ -535,16 +610,18 @@ section[id] {
     transition:
         transform var(--motion-base) var(--motion-ease),
         border-color var(--motion-fast) ease,
+        border-top-color var(--motion-fast) ease,
         background-color var(--motion-fast) ease,
         box-shadow var(--motion-fast) ease;
 }
 
 .project-card:hover,
 .project-card:focus-visible {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     border-color: var(--primary-line);
+    border-top-color: var(--primary-line);
     background: var(--primary-fill);
-    box-shadow: 8px 8px 0 rgba(0, 0, 0, 0.12);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.08);
 }
 
 .project-card .project-tag-row {
@@ -780,6 +857,19 @@ body:has(#theme-military:checked) .theme-dot-emerald {
 }
 
 /* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+    .project-carousel-slide {
+        width: min(100%, 72%);
+    }
+    .project-carousel-slides {
+        min-height: 360px;
+    }
+
+    .project-grid {
+        columns: 2;
+    }
+}
+
 @media (max-width: 640px) {
     .page {
         padding: 0 16px;
@@ -789,26 +879,11 @@ body:has(#theme-military:checked) .theme-dot-emerald {
     }
 
     .project-carousel-slide {
-        width: min(100%, 82%);
+        width: min(100%, 84%);
+        padding: 20px 18px 16px;
     }
     .project-carousel-slides {
-        min-height: 320px;
-    }
-
-    #projects:has(#proj-1:checked) .project-carousel-slide[data-index="4"],
-    #projects:has(#proj-2:checked) .project-carousel-slide[data-index="0"],
-    #projects:has(#proj-3:checked) .project-carousel-slide[data-index="1"],
-    #projects:has(#proj-4:checked) .project-carousel-slide[data-index="2"],
-    #projects:has(#proj-5:checked) .project-carousel-slide[data-index="3"] {
-        transform: translateX(-150%) scale(0.82) rotateY(10deg) !important;
-    }
-
-    #projects:has(#proj-1:checked) .project-carousel-slide[data-index="1"],
-    #projects:has(#proj-2:checked) .project-carousel-slide[data-index="2"],
-    #projects:has(#proj-3:checked) .project-carousel-slide[data-index="3"],
-    #projects:has(#proj-4:checked) .project-carousel-slide[data-index="4"],
-    #projects:has(#proj-5:checked) .project-carousel-slide[data-index="0"] {
-        transform: translateX(50%) scale(0.82) rotateY(-10deg) !important;
+        min-height: 380px;
     }
 
     .project-grid {
@@ -817,6 +892,14 @@ body:has(#theme-military:checked) .theme-dot-emerald {
     .bp-controls {
         flex-direction: column;
         align-items: stretch;
+    }
+
+    .testimonial-dots {
+        gap: 8px;
+    }
+    .testimonial-dot {
+        width: 12px;
+        height: 12px;
     }
 
     #contact {
@@ -837,5 +920,13 @@ body:has(#theme-military:checked) .theme-dot-emerald {
     #about,
     .bp-section {
         margin-bottom: 36px;
+    }
+
+    .project-carousel-slide {
+        width: min(100%, 90%);
+        padding: 18px 16px 14px;
+    }
+    .project-carousel-slides {
+        min-height: 400px;
     }
 }

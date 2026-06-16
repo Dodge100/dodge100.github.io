@@ -1,0 +1,212 @@
+/* ─── HERO ─── */
+.hero {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin: 0 0 8px;
+    color: var(--text-primary);
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    opacity: 0.9;
+    margin: 0 0 10px;
+    max-width: 520px;
+    line-height: 1.55;
+}
+
+/* ─── HERO SPLIT LAYOUT ─── */
+.hero-split {
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+    align-items: center;
+}
+
+.hero-left {
+    flex: 0 0 340px;
+}
+
+.hero-right {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-viewport {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective: 1200px;
+    position: relative;
+    min-height: 480px;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotateX(52deg) rotateZ(-40deg) scale(1.3);
+    }
+    to {
+        transform: rotateX(52deg) rotateZ(320deg) scale(1.3);
+    }
+}
+
+/* ─── 3D SCENE ─── */
+.bp-scene {
+    position: relative;
+    width: 0;
+    height: 0;
+    transform-style: preserve-3d;
+    transform: rotateX(52deg) rotateZ(-40deg) scale(1.3);
+    transition: transform 0.8s var(--ease-out);
+    margin-top: 30px;
+}
+
+body:has(#rotate-trigger:checked) .bp-scene {
+    animation: spin-slow 12s linear infinite;
+}
+
+/* ─── BASE LAYER ─── */
+.bp-layer {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform-style: preserve-3d;
+    margin-left: -180px;
+    margin-top: -180px;
+    width: 360px;
+    height: 360px;
+    transition:
+        transform 0.8s var(--ease-out),
+        opacity 0.5s;
+}
+
+.bp-layer svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* ─── SCREEN ASSEMBLY (hinged, tilts open on explode) ─── */
+.screen-group {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 360px;
+    height: 360px;
+    margin-left: -180px;
+    margin-top: -180px;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.34, 1.2, 0.64, 1);
+    transform-origin: 50% 0% 0px;
+    transform: rotateX(40deg);
+}
+
+body:has(#explode-trigger:checked) .screen-group {
+    transform: rotateX(90deg);
+}
+
+/* ─── LAYER POSITIONS (assembled) ─── */
+.layer-bottom-case {
+    transform: translate3d(0, 0, 0px);
+}
+.layer-motherboard {
+    transform: translate3d(0, 0, 8px);
+}
+.layer-cooling {
+    transform: translate3d(0, 0, 16px);
+}
+.layer-switches {
+    transform: translate3d(0, 0, 24px);
+}
+.layer-keycaps {
+    transform: translate3d(0, 0, 32px);
+}
+
+/* Screen layers (inside screen-group) */
+.screen-group .layer-screen-case {
+    transform: translate3d(0, 0, 0px);
+}
+.screen-group .layer-display {
+    transform: translate3d(0, 0, 6px);
+}
+
+/* ─── EXPLODED POSITIONS ─── */
+body:has(#explode-trigger:checked) .layer-bottom-case {
+    transform: translate3d(0, 0, 0px);
+}
+body:has(#explode-trigger:checked) .layer-motherboard {
+    transform: translate3d(0, 0, 35px);
+}
+body:has(#explode-trigger:checked) .layer-cooling {
+    transform: translate3d(0, 0, 60px);
+}
+body:has(#explode-trigger:checked) .layer-switches {
+    transform: translate3d(0, 0, 85px);
+}
+body:has(#explode-trigger:checked) .layer-keycaps {
+    transform: translate3d(0, 0, 110px);
+}
+
+/* Screen tilts open on explode - hinge stays at keyboard level */
+body:has(#explode-trigger:checked) .screen-group .layer-screen-case {
+    transform: translate3d(0, 0, 0px);
+}
+body:has(#explode-trigger:checked) .screen-group .layer-display {
+    transform: translate3d(0, 0, 15px);
+}
+
+/* ─── HOVER DIM ─── */
+.hero-viewport:hover .bp-layer {
+    opacity: 0.12;
+    transition: opacity 0.3s;
+}
+.hero-viewport:hover .bp-layer:hover {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px var(--primary-line));
+    z-index: 70;
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 900px) {
+    .hero-split {
+        flex-direction: column;
+    }
+    .hero-left {
+        width: 100%;
+    }
+    .hero-right {
+        flex: none;
+        width: 100%;
+    }
+    .hero-viewport {
+        min-height: 280px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hero {
+        margin-bottom: 40px;
+    }
+    .hero-viewport {
+        min-height: 240px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hero {
+        margin-bottom: 36px;
+    }
+}
